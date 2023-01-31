@@ -9,13 +9,13 @@ const workoutsSchema = new Schema({
     },
     workouts: [
         {
-            setName: {
+            exerciseName: {
                 type: String,
                 require: true,
                 minlength: 1,
                 maxlength: 280,
             },
-            setWeight: {
+            weight: {
                 type: Number,
                 require: true,
                 minlength: 1,

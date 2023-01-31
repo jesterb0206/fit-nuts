@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.4",
-    "apollo-server-express": "^2.15.0"
+    "apollo-server-express": "^2.15.0",
+    "axios": "^1.2.6",
+    "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3"
   }
 }
