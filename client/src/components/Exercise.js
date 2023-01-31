@@ -6,6 +6,7 @@ const Exercise = () => {
   return (
     <div className='d-flex justify-content-center'>
       {/* Testing Comment*/}
+      {/* Testing Comment*/}
       <button> - remove exercise</button>
       <h1> Example exercise 1</h1>
       <p>Weight</p>
