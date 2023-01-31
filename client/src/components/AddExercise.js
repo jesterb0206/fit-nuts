@@ -45,30 +45,71 @@ const AddExercise = () => {
     <>
       <Form onSubmit={handleFormSubmit}>
         <Form.Group>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor='name'>name</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Your email'
-            name='email'
+            placeholder='Exercise Name'
+            name='name'
             onChange={handleInputChange}
-            value={userFormData.email}
+            value={userFormData.name}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Name is required!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor='weight'>weight</Form.Label>
           <Form.Control
-            type='password'
-            placeholder='Your password'
-            name='password'
+            type='text'
+            placeholder='Working Weight'
+            name='weight'
             onChange={handleInputChange}
-            value={userFormData.password}
+            value={userFormData.weight}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>Working Weight is required!</Form.Control.Feedback>
         </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='sets'>sets</Form.Label>
+          <Form.Control
+            type='number'
+            placeholder='number of sets'
+            name='sets'
+            onChange={handleInputChange}
+            value={userFormData.sets}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='reps'>reps</Form.Label>
+          <Form.Control
+            type='number'
+            placeholder='number of reps'
+            name='reps'
+            onChange={handleInputChange}
+            value={userFormData.reps}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='other'>other</Form.Label>
+          <Form.Control
+            type='string'
+            placeholder='other'
+            name='other'
+            onChange={handleInputChange}
+            value={userFormData.other}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
+        </Form.Group>
+
+
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
