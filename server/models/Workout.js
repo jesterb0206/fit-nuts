@@ -9,6 +9,10 @@ const workoutsSchema = new Schema({
     },
     workouts: [
         {
+            dayOfTheWeek:{
+                type:String, 
+                require: false
+            },
             exerciseName: {
                 type: String,
                 require: true,
@@ -27,6 +31,10 @@ const workoutsSchema = new Schema({
             },
             reps: {
                 type: Number,
+                require: false,
+            },
+            other: {
+                type: String,
                 require: false,
             }
         }
