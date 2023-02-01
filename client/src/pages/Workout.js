@@ -21,6 +21,7 @@
 import React from 'react';
 import Exercise from '../components/Exercise';
 import AddExercise from '../components/AddExercise';
+import CurrentWorkout from '../components/CurrentWorkout'
 
 
 const Workout = () => {
@@ -35,6 +36,7 @@ const Workout = () => {
             <h1> This is there workout page</h1>
 
            < Exercise />
+           < CurrentWorkout />
            < AddExercise /> 
         </div>
         </main>
