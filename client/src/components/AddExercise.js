@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { ADD_EXERCISE } from '../utils/mutations';
+import Auth from '../utils/auth';
+
 
 const AddExercise = () => {
-    const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+    const [userFormData, setUserFormData] = useState({ exerciseName: '', weight: '', sets: '', reps: '', other:'' 
+    });
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
       };
+
      const [addExercise, { error, data} ] = useMutation(ADD_EXERCISE);
 
     const handleFormSubmit = async (event) => {
@@ -22,21 +26,29 @@ const AddExercise = () => {
         event.stopPropagation();
     }
     
-    try {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
 
+    if (!token) {
+      return false;
+    }
+
+    try {
+     
         const { data } = await addExercise({
             variables: { ...userFormData },
           });
-    
-    
+          console.log(data);
+  
         } catch (err) {
           console.error(err);
     }
 
     setUserFormData({
-        username: '',
-        email: '',
-        password: '',
+        exerciseName: '',
+        weight: '',
+        sets: '',
+        reps: '',
+        other: '',
         });
     };
 
@@ -49,9 +61,9 @@ const AddExercise = () => {
           <Form.Control
             type='text'
             placeholder='Exercise Name'
-            name='name'
+            name='exerciseName'
             onChange={handleInputChange}
-            value={userFormData.name}
+            value={userFormData.exerciseName}
             required
           />
           <Form.Control.Feedback type='invalid'>Name is required!</Form.Control.Feedback>
@@ -78,7 +90,6 @@ const AddExercise = () => {
             name='sets'
             onChange={handleInputChange}
             value={userFormData.sets}
-            required
           />
           <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
         </Form.Group>
@@ -91,7 +102,6 @@ const AddExercise = () => {
             name='reps'
             onChange={handleInputChange}
             value={userFormData.reps}
-            required
           />
           <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
         </Form.Group>
@@ -104,14 +114,13 @@ const AddExercise = () => {
             name='other'
             onChange={handleInputChange}
             value={userFormData.other}
-            required
           />
           <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
         </Form.Group>
 
 
         <Button
-          disabled={!(userFormData.email && userFormData.password)}
+          disabled={!(userFormData.exerciseName && userFormData.weight)}
           type='submit'
           variant='success'>
           Submit
