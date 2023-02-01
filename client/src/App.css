@@ -1,0 +1,12 @@
+#center__text {
+  text-align: center;
+}
+
+.workout__cards {
+  color: white;
+  height: 800px;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  width: 80%;
+}
