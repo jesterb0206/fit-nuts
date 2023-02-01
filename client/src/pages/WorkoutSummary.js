@@ -1,13 +1,24 @@
-/* This page will be where the workouts will be displayed as cards as a list view. 
+/* eslint-disable react/jsx-no-undef */
 
+import React from 'react';
+import Card from '.././components/Card';
+import '../App.css';
 
-Each card will display a date and the workouts, and the records for the workouts
+function WorkoutSummary() {
+  return (
+    <div ClassName='workout__summary'>
+      <h1 id='center__text'>Workout Summary</h1>
+      <div className='workout__cards'>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </div>
+  );
+}
 
--likes, comments
--date
--card
---list of workouts
---number of reps and sets done
-
-
-*/
+export default WorkoutSummary;
