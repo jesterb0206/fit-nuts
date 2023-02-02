@@ -10,7 +10,7 @@ const typeDefs = gql `
     }
 
     type Workout {
-        dayOfTheWeek: String
+        dayOfTheWeek: String!
         exerciseName: String!
         workoutId: ID!
         weight: Int!
@@ -35,8 +35,8 @@ const typeDefs = gql `
 
     type Query {
         me: User
-        users:[User]
-        
+        users:[User]  
+        workout(dayOfTheWeek: String! )[Workout]
     }
 
     type Mutation {
@@ -46,6 +46,7 @@ const typeDefs = gql `
         removeWorkout(_id: ID! ) : Workout
         updateSets(_id: ID!, sets: Int): Workout
         updateReps( _id: ID!, reps: Int) : Workout
+        summaryPage(summary: MessageInput ): User
     }
 `
 
