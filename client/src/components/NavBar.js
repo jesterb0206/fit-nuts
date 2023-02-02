@@ -6,22 +6,23 @@ import LoginForm from './LoginForm';
 
 import Auth from '../utils/auth';
 
+
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
+
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            Google Books Search
-          </Navbar.Brand>
+          Ｆｉｔｎｅｓｓ 🄽🅄🅃🅂</Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
-                Search For Books
+              ▁ ▂ ▄ ▅ ▆ ▇ █❚█══█❚█ ▇ ▆ ▅ ▄ ▂ ▁
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
@@ -32,7 +33,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>𝐋𝐨𝐠𝐢𝐧/ 𝐒𝐢𝐠𝐧 𝐔𝐩</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
