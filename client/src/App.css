@@ -6,11 +6,11 @@
 
 .workout__cards {
   color: white;
-  height: 800px;
+  height: 400px;
   margin: auto;
-  max-width: 500px;
+  max-width: 1000px;
   text-align: center;
-  width: 80%;
+  width: 99%;
 }
 
 .card {
@@ -19,6 +19,12 @@
   height: 100%;
   margin-bottom: 10px;
   width: 100%;
+}
+
+td,
+th,
+tr {
+  border: 1px solid white;
 }
 
 /* ------------------------------- HomePage Section------------------------------------ */
