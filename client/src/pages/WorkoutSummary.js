@@ -4,7 +4,7 @@ import React from 'react';
 import {useQuery} from '@apollo/client';
 import {QUERY_WORKOUT} from '../utils/queries';
 import Card from '.././components/Card';
-import '../App.css';
+// import '../App.css';
 
 function WorkoutSummary() {
   const {loading, data} = useQuery(QUERY_WORKOUT);
