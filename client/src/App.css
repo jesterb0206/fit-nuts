@@ -1,0 +1,71 @@
+/* --------------------------------Workout Card Section ------------------------------- */
+
+#center__text {
+  text-align: center;
+}
+
+.workout__cards {
+  color: white;
+  height: 800px;
+  margin: auto;
+  max-width: 500px;
+  text-align: center;
+  width: 80%;
+}
+
+.card {
+  background-color: black;
+  border-radius: 20px;
+  height: 100%;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* ------------------------------- HomePage Section------------------------------------ */
+
+.homepageSection {
+  background-image: url('../src/images/workout-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.welcomeHeader {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+  border: 10px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(32, 32, 164);
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 5);
+}
+
+.introParagraph {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+  border: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 25px;
+  /* border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  border:2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+  min-height: 100vh;
+  color: rgb(203, 77, 19);
+}
+
+/* ---------------------------------------------------------------------------------- */
