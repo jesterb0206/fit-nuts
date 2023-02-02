@@ -1,33 +1,51 @@
-/* --------------------------------Workout Card Section ------------------------------- */
+/* Color Palette */
+
+:root {
+  --off-white: #d6d5c3;
+  --red: #ea2420;
+}
+
+/* -------------------- Workout Card Section -------------------- */
+
+/* An ID to Center Only Specific Elements */
 
 #center__text {
   text-align: center;
 }
 
+/* Workout Summary Card Container */
+
 .workout__cards {
-  color: white;
-  height: 400px;
-  margin: auto;
-  max-width: 1000px;
-  text-align: center;
-  width: 99%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Workout Summary Card Styling */
+
 .card {
-  background-color: black;
+  background-color: var(--off-white);
+  border: 1px solid rgba(234, 36, 32, 1);
   border-radius: 20px;
-  height: 100%;
-  margin-bottom: 10px;
-  width: 100%;
+  box-shadow: 12px 12px 2px 1px rgba(236, 36, 32, 0.75);
+  cursor: pointer;
+  height: 600px;
+  margin-bottom: 30px;
+  max-width: 1000px;
+  padding: 10px;
+  width: 90%;
 }
+
+/* Table Styling */
 
 td,
 th,
 tr {
-  border: 1px solid white;
+  border: 1px solid black;
+  padding-left: 10px;
 }
 
-/* ------------------------------- HomePage Section------------------------------------ */
+/* -------------------- Home Page Section -------------------- */
 
 .homepageSection {
   background-image: url('../src/images/workout-1.jpg');
@@ -38,8 +56,6 @@ tr {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  
- 
 }
 
 .welcomeHeader {
@@ -51,7 +67,7 @@ tr {
   border: 10px;
   padding: 10px;
   text-align: center;
-  color:rgb(5, 5, 105);
+  color: rgb(5, 5, 105);
   box-shadow: 0 10px 0 0 rgba(0, 0, 0, 5);
 }
 
@@ -90,7 +106,6 @@ tr {
   min-height: 100vh;
 }
 
-
 .workoutHeader {
   display: flex;
   flex-wrap: wrap;
@@ -101,26 +116,27 @@ tr {
 }
 
 .addExerciseForm {
-    margin-top: 250px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 20px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    margin: 50px;
+  margin-top: 250px;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  margin: 50px;
 }
 
 .inputNameTitle {
   font-size: 25px;
   color: rgb(48, 214, 15);
-  text-shadow: 0 0 10 rgba(48, 214, 15),
-  0 0 20 rgb(48, 214, 15),
-  0 0 40 rgb(48, 214, 15),
-  0 0 80 rgb(48, 214, 15),
-  0 0 160 rgb(48, 214, 15)
-  0 0 320 rgb(48, 214, 15);
+  text-shadow: 0 0 10 rgba(48, 214, 15), 0 0 20 rgb(48, 214, 15),
+    0 0 40 rgb(48, 214, 15), 0 0 80 rgb(48, 214, 15),
+    0 0 160 rgb(48, 214, 15) 0 0 320 rgb(48, 214, 15);
 }
 
 .exerciseSubmitBtn {
