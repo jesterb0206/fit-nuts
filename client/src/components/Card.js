@@ -4,7 +4,7 @@ import '../App.css';
 function Card() {
   return (
     <div className='card'>
-      <h1>Monday</h1>
+      <h1 id='center__text'>Monday</h1>
       <table>
         <tr>
           <th>Workout</th>
