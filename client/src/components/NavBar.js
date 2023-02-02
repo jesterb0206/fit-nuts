@@ -5,6 +5,7 @@ import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
 import Auth from '../utils/auth';
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 
 const AppNavbar = () => {
@@ -21,9 +22,17 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
+              {/* Navbar Links to the different pages */}
+              {/* Homepage Link */}
+              <Nav.Link className='homeNavLink' as={Link} to='/'>Home</Nav.Link>
+              {/* Workout Link */}
+              <Nav.Link className="workoutNavLink"as={Link} to='/workout'>Start Workout</Nav.Link>
+              {/* Summary Link */}
+              <Nav.Link className="summaryNavLink" as={Link} to='/workoutSummary'>Workout Summary</Nav.Link>
               <Nav.Link as={Link} to='/'>
               ▁ ▂ ▄ ▅ ▆ ▇ █❚█══█❚█ ▇ ▆ ▅ ▄ ▂ ▁
               </Nav.Link>
+              
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
