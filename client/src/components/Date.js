@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+/* eslint-disable no-unused-vars */
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 const Time = () => {
-    return (
+  return (
     <div>
-        <h1>Current Date</h1>
+      <h1>Current Date</h1>
     </div>
-    )
-}
+  );
+};
 
-export default Time
+export default Time;

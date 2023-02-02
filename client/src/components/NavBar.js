@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+/* eslint-disable no-unused-vars */
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
+import {Navbar, Nav, Container, Modal, Tab} from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
 import Auth from '../utils/auth';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-
 
 const AppNavbar = () => {
   // set modal display state
@@ -14,25 +14,35 @@ const AppNavbar = () => {
 
   return (
     <>
-
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-          Ｆｉｔｎｅｓｓ 🄽🅄🅃🅂</Navbar.Brand>
+            Ｆｉｔｎｅｓｓ 🄽🅄🅃🅂
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               {/* Navbar Links to the different pages */}
               {/* Homepage Link */}
-              <Nav.Link className='homeNavLink' as={Link} to='/'>Home</Nav.Link>
-              {/* Workout Link */}
-              <Nav.Link className="workoutNavLink"as={Link} to='/workout'>Start Workout</Nav.Link>
-              {/* Summary Link */}
-              <Nav.Link className="summaryNavLink" as={Link} to='/workoutSummary'>Workout Summary</Nav.Link>
-              <Nav.Link as={Link} to='/'>
-              ▁ ▂ ▄ ▅ ▆ ▇ █❚█══█❚█ ▇ ▆ ▅ ▄ ▂ ▁
+              <Nav.Link className='homeNavLink' as={Link} to='/'>
+                Home
               </Nav.Link>
-              
+              {/* Workout Link */}
+              <Nav.Link className='workoutNavLink' as={Link} to='/workout'>
+                Start Workout
+              </Nav.Link>
+              {/* Summary Link */}
+              <Nav.Link
+                className='summaryNavLink'
+                as={Link}
+                to='/workoutSummary'
+              >
+                Workout Summary
+              </Nav.Link>
+              <Nav.Link as={Link} to='/'>
+                ▁ ▂ ▄ ▅ ▆ ▇ █❚█══█❚█ ▇ ▆ ▅ ▄ ▂ ▁
+              </Nav.Link>
+
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
@@ -42,7 +52,9 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>𝐋𝐨𝐠𝐢𝐧/ 𝐒𝐢𝐠𝐧 𝐔𝐩</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>
+                  𝐋𝐨𝐠𝐢𝐧/ 𝐒𝐢𝐠𝐧 𝐔𝐩
+                </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -53,7 +65,8 @@ const AppNavbar = () => {
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
+        aria-labelledby='signup-modal'
+      >
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>

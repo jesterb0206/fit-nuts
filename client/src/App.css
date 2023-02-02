@@ -1,7 +1,10 @@
 /* Color Palette */
 
 :root {
+  --blue: #2b388e;
+  --green-gray: #9f9772;
   --off-white: #d6d5c3;
+  --purple-blue: #261f62;
   --red: #ea2420;
 }
 
