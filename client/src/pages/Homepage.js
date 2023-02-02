@@ -14,7 +14,7 @@ const Homepage = () => {
     return(
         <div className='homepageSection'>
             <h1 className='welcomeHeader'>Welcome To Fitness Nuts!</h1>
-            <p className='introParagraph'>This web application is for the modern day FITNESS NUT! Here you will be able to save all of your every day exercises, workouts, reps, sets, etc. All you have to do is sign in or create an account and get to pumping some iron . . . or whatever it is that you do. . . Once you're signed in, you can start creating workouts be selecting the "create workout" buttons in the navigation bar5 on top. you can also look up your old workouts by selecting the "past workouts" button to see what you last PR (personal record) was the last time. Anyways, lets get to exercising! I'll see you in the gym!</p>
+            <p className='introParagraph'>ᴛᴛʜɪꜱ ᴡᴇʙ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ꜰᴏʀ ᴛʜᴇ ᴍᴏᴅᴇʀɴ ᴅᴀʏ ꜰɪᴛɴᴇꜱꜱ ɴᴜᴛ! ʜᴇʀᴇ ʏᴏᴜ ᴡɪʟʟ ʙᴇ ᴀʙʟᴇ ᴛᴏ ꜱᴀᴠᴇ ᴀʟʟ ᴏꜰ ʏᴏᴜʀ ᴇᴠᴇʀʏ ᴅᴀʏ ᴇxᴇʀᴄɪꜱᴇꜱ, ᴡᴏʀᴋᴏᴜᴛꜱ, ʀᴇᴘꜱ, ꜱᴇᴛꜱ, ᴇᴛᴄ. ᴀʟʟ ʏᴏᴜ ʜᴀᴠᴇ ᴛᴏ ᴅᴏ ɪꜱ ꜱɪɢɴ ɪɴ ᴏʀ ᴄʀᴇᴀᴛᴇ ᴀɴ ᴀᴄᴄᴏᴜɴᴛ ᴀɴᴅ ɢᴇᴛ ᴛᴏ ᴘᴜᴍᴘɪɴɢ ꜱᴏᴍᴇ ɪʀᴏɴ . . . ᴏʀ ᴡʜᴀᴛᴇᴠᴇʀ ɪᴛ ɪꜱ ᴛʜᴀᴛ ʏᴏᴜ ᴅᴏ. . . ᴏɴᴄᴇ ʏᴏᴜ'ʀᴇ ꜱɪɢɴᴇᴅ ɪɴ, ʏᴏᴜ ᴄᴀɴ ꜱᴛᴀʀᴛ ᴄʀᴇᴀᴛɪɴɢ ᴡᴏʀᴋᴏᴜᴛꜱ ʙᴇ ꜱᴇʟᴇᴄᴛɪɴɢ ᴛʜᴇ "ᴄʀᴇᴀᴛᴇ ᴡᴏʀᴋᴏᴜᴛ" ʙᴜᴛᴛᴏɴꜱ ɪɴ ᴛʜᴇ ɴᴀᴠɪɢᴀᴛɪᴏɴ ʙᴀʀ5 ᴏɴ ᴛᴏᴘ. ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ʟᴏᴏᴋ ᴜᴘ ʏᴏᴜʀ ᴏʟᴅ ᴡᴏʀᴋᴏᴜᴛꜱ ʙʏ ꜱᴇʟᴇᴄᴛɪɴɢ ᴛʜᴇ "ᴘᴀꜱᴛ ᴡᴏʀᴋᴏᴜᴛꜱ" ʙᴜᴛᴛᴏɴ ᴛᴏ ꜱᴇᴇ ᴡʜᴀᴛ ʏᴏᴜ ʟᴀꜱᴛ ᴘʀ (ᴘᴇʀꜱᴏɴᴀʟ ʀᴇᴄᴏʀᴅ) ᴡᴀꜱ ᴛʜᴇ ʟᴀꜱᴛ ᴛɪᴍᴇ. ᴀɴʏᴡᴀʏꜱ, ʟᴇᴛꜱ ɢᴇᴛ ᴛᴏ ᴇxᴇʀᴄɪꜱɪɴɢ! ɪ'ʟʟ ꜱᴇᴇ ʏᴏᴜ ɪɴ ᴛʜᴇ ɢʏᴍ!</p>
         </div>
     )
 }
