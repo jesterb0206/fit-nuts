@@ -64,9 +64,9 @@ const AddExercise = () => {
 
     return (
     <>
-      <Form onSubmit={handleFormSubmit}>
+      <Form className="addExerciseForm" onSubmit={handleFormSubmit}>
         <Form.Group>
-          <Form.Label htmlFor='name'>name</Form.Label>
+          <Form.Label className="inputNameTitle" htmlFor='name'>Name</Form.Label>
           <Form.Control
             type='text'
             placeholder='Exercise Name'
@@ -79,7 +79,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='weight'>weight<i className="material-icons">barbell</i></Form.Label>
+          <Form.Label className="inputNameTitle" htmlFor='weight'>Weight<i className="material-icons">barbell</i></Form.Label>
           <Form.Control
             type='text'
             placeholder='Working Weight'
@@ -92,7 +92,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='sets'>sets</Form.Label>
+          <Form.Label className="inputNameTitle" htmlFor='sets'>Sets</Form.Label>
           <Form.Control
             type='number'
             placeholder='number of sets'
@@ -104,7 +104,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='reps'>reps</Form.Label>
+          <Form.Label className="inputNameTitle" htmlFor='reps'>Reps</Form.Label>
           <Form.Control
             type='number'
             placeholder='number of reps'
@@ -116,7 +116,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='other'>other</Form.Label>
+          <Form.Label className="inputNameTitle" htmlFor='other'>Other</Form.Label>
           <Form.Control
             type='string'
             placeholder='other'
@@ -128,7 +128,7 @@ const AddExercise = () => {
         </Form.Group>
 
 
-        <Button
+        <Button className='exerciseSubmitBtn'
           disabled={!(userFormData.exerciseName && userFormData.weight)}
           type='submit'
           variant='success'>
