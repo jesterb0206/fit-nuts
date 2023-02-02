@@ -70,7 +70,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='weight'>weight</Form.Label>
+          <Form.Label htmlFor='weight'>weight<i class="material-icons">barbell</i></Form.Label>
           <Form.Control
             type='text'
             placeholder='Working Weight'
