@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 
 
 const AddExercise = () => {
-    const [userFormData, setUserFormData] = useState({ dayOfTheWeek: null, exerciseName: null, weight: null, sets: null, reps: null, other:null
+    const [userFormData, setUserFormData] = useState({ dayOfTheWeek: '', exerciseName: '', weight: '', sets: '', reps: '' , other: ''
     });
     const [addExercise ] = useMutation(ADD_EXERCISE);
 
@@ -17,43 +17,48 @@ const AddExercise = () => {
       };
 
     const handleFormSubmit = async (event) => {
-    event.preventDefault();
+      event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
+      // check if form has everything (as per react-bootstrap docs)
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+      }
 
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    if (!token) {
-      return false;
-    }
+      if (!token) {
+        return false;
+      }
 
-    try {
-      console.log(userFormData)
-      
-        const { data } = await addExercise({
-            variables: { ...userFormData },
+      try {
+        console.log(userFormData)
+        
+          const { data } = await addExercise({
+              variables: { 
+                ...userFormData,
+                reps: parseInt(userFormData.reps),
+                sets: parseInt(userFormData.sets),
+                weight: parseInt(userFormData.weight),
+              },
+            });
+            
+            console.log(data);
+            console.log(userFormData);
+
+
+          } catch (err) {
+            console.error(err);
+      }
+
+      setUserFormData({
+          exerciseName: '',
+          weight: '',
+          sets: '',
+          reps: '',
+          other: '',
           });
-          
-          console.log(data);
-          console.log(userFormData);
-
-
-        } catch (err) {
-          console.error(err);
-    }
-
-    setUserFormData({
-        exerciseName: '',
-        weight: '',
-        sets: '',
-        reps: '',
-        other: '',
-        });
     };
 
 
