@@ -22,13 +22,6 @@ function WorkoutSummary() {
 }
 
 
--likes, comments
--date
--card
---list of workouts
---number of reps and sets done
-*/
-import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_WORKOUT } from '../utils/mutations'
 
