@@ -20,8 +20,8 @@ const Exercise = () => {
         <h1> Example exercise 1</h1>
         <p>Weight</p>
         <p> set: 1 x 12</p>
-        <button> + used to increase set</button>
-        <button> - used to decrease set</button>
+        <button> + used to increase set<i class="material-icons">barbell</i></button>
+        <button> - used to decrease set<i class="material-icons">barbell</i></button>
 
         
     </div>
