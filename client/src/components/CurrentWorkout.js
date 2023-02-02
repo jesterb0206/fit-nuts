@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
-import { QUERY_ME } from '../utils/queries'
+import { QUERY_ME } from '../utils/queries';
+import { QUERY_WORKOUT } from '../utils/queries';
 import { useMutation, useQuery} from '@apollo/client';
 import Auth from '../utils/auth';
 
 
 
 const CurrentWorkout = () => {
-
+    const dayOfTheWeek = "Sunday";
     // const { loading, data } = useQuery(QUERY_ME);
+    const { loading, data } = useQuery(QUERY_WORKOUT,
+        {
+            variables: { dayOfTheWeek }
+        }
+    );
 
-    // const userData = data?.me || {}
+    const userData = data?.me || {}
+    console.log(data);
+    console.log(userData);
+
     const [extraSets, setExtraSets] = useState(0)
   // on save button, pass through
 
 
-    // if (loading) {
-    //     return <h2>LOADING...</h2>;
-    // }
+    if (loading) {
+        return <h2>LOADING...</h2>;
+    }
 
     const increaseSet = async(currentSets) => {
         setExtraSets(extraSets + 1)
@@ -39,8 +48,8 @@ const CurrentWorkout = () => {
     return(
     <>
     <Container>
-        {/* <CardColumns>
-            {userData?.workouts?.map((exercise) => {
+        <CardColumns>
+            {data?.workout?.map((exercise) => {
                 return (
                 <Card key={exercise._id} border='dark'>
                     <Card.Body>
@@ -65,7 +74,7 @@ const CurrentWorkout = () => {
                 </Card>
                 );
             })}
-            </CardColumns> */}
+            </CardColumns>
 
 
 
