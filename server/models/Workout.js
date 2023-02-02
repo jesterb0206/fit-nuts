@@ -2,14 +2,8 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const workoutsSchema = new Schema({
-    createdAt: {
-        type: Date,
-        default: Date.Now,
-        get: (timestamp) => dateFormat(timestamp)
-    },
-    workouts: [
-        {
-            dayOfTheWeek:{
+        
+            dayOfTheWeek: {
                 type:String, 
                 require: false
             },
@@ -18,6 +12,7 @@ const workoutsSchema = new Schema({
                 require: true,
                 minlength: 1,
                 maxlength: 280,
+                trim: true
             },
             weight: {
                 type: Number,
@@ -37,11 +32,6 @@ const workoutsSchema = new Schema({
                 type: String,
                 require: false,
             }
-        }
-    ]
-
-
-
 
 })
 

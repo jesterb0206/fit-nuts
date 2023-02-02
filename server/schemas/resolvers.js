@@ -38,19 +38,21 @@ const resolvers = {
             return { token, user };
           },
         addExercise: async(parent, { dayOfTheWeek, exerciseName, weight, sets, reps, other }, context) => {
-            console.log(context);
-            console.log(context.user);
-            if(context.user) {
+            // console.log(context.user);
+            // console.log(context.user._id);
+            // if(context.user) 
+            
+            // {
             const workout = await Workout.create({ dayOfTheWeek, exerciseName, weight, sets, reps, other });
 
-            await User.findOneAndUpdate(
-                {_id: context.user._id},
-                { $addToSet: { workouts: workout._id }}
-            )
+            // await User.findOneAndUpdate(
+            //     {_id: context.user._id},
+            //     { $addToSet: { workouts: workout._id }}
+            // )
 
             return workout;
-            }
-            throw new AuthenticationError('You need to be logged in!');
+            // }
+            // throw new AuthenticationError('You need to be logged in!');
         },
         removeWorkout: async(parent, { workoutId }, context  ) => {
             if(context.user) {

@@ -10,6 +10,7 @@ const typeDefs = gql `
     }
 
     type Workout {
+        _id: ID
         dayOfTheWeek: String
         exerciseName: String!
         workoutId: ID!

@@ -6,15 +6,15 @@ import Auth from '../utils/auth';
 
 
 const AddExercise = () => {
-    const [userFormData, setUserFormData] = useState({ exerciseName: '', weight: '', sets: '', reps: '', other:'' 
+    const [userFormData, setUserFormData] = useState({ dayOfTheWeek: null, exerciseName: null, weight: null, sets: null, reps: null, other:null
     });
+    const [addExercise ] = useMutation(ADD_EXERCISE);
+
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
       };
-
-     const [addExercise, { error, data} ] = useMutation(ADD_EXERCISE);
 
     const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +25,7 @@ const AddExercise = () => {
         event.preventDefault();
         event.stopPropagation();
     }
-    
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -33,12 +33,16 @@ const AddExercise = () => {
     }
 
     try {
-     
+      console.log(userFormData)
+      
         const { data } = await addExercise({
             variables: { ...userFormData },
           });
+          
           console.log(data);
-  
+          console.log(userFormData);
+
+
         } catch (err) {
           console.error(err);
     }

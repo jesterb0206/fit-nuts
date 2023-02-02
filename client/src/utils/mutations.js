@@ -26,7 +26,7 @@ export const ADD_USER = gql`
 
 export const ADD_EXERCISE = gql `
     mutation addExercise(
-        $dayOfTheWeek: String!,
+        $dayOfTheWeek: String,
         $exerciseName: String!,
         $weight: Int!,
         $sets: Int,
@@ -51,7 +51,6 @@ export const ADD_EXERCISE = gql `
           }
 }
 `
-
 export const UPDATE_SET = gql `
     mutation updateSets(
         $sets: Int

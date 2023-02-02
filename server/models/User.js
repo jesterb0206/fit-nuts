@@ -1,8 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const { Workout } = require('./Workout')
-// import schema from Book.js
-
 
 const userSchema = new Schema(
   {
@@ -25,14 +22,9 @@ const userSchema = new Schema(
         {
             type: Schema.Types.ObjectId,
             ref: 'Workout'
-        }],
+        }
+    ],
   },
-  // set this to use virtual below
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
 );
 
 // hash user password
