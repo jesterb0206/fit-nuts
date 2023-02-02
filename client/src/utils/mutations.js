@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_EXERCISE = gql `
+export const ADD_EXERCISE = gql`
     mutation addExercise(
         $dayOfTheWeek: String!,
         $exerciseName: String!,
@@ -52,7 +52,7 @@ export const ADD_EXERCISE = gql `
 }
 `
 
-export const UPDATE_SET = gql `
+export const UPDATE_SET = gql`
     mutation updateSets(
         $sets: Int
     ) {
@@ -62,15 +62,33 @@ export const UPDATE_SET = gql `
     }`
 
 
-    export const UPDATE_REPS = gql `
+export const UPDATE_REPS = gql`
     mutation updateReps(
         $reps: Int
     ) {
         updateReps( reps: $reps) {
             set
         }
-    }`
+    }
+`
 
+
+export const SUMMARY_PAGE = gql`
+  mutation  summaryPage($summary: summaryPage!) {
+    summaryPage(summary: $summary) {
+      username
+      workout{
+        dayOfTheWeek
+        exerciseName
+        workoutId
+        weight
+        sets
+        reps
+        other
+      }
+    }
+  }  
+`
 
 
 
