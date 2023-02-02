@@ -4,12 +4,11 @@ import { useMutation } from '@apollo/client';
 import { ADD_EXERCISE } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-
 const AddExercise = () => {
     const [userFormData, setUserFormData] = useState({ dayOfTheWeek: '', exerciseName: '', weight: '', sets: '', reps: '' , other: ''
     });
     const [addExercise ] = useMutation(ADD_EXERCISE);
-
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -17,7 +16,16 @@ const AddExercise = () => {
       };
 
     const handleFormSubmit = async (event) => {
+
       event.preventDefault();
+
+      if(userFormData.dayOfTheWeek === '') {
+        setErrorMessage('Please select a valid day of the week :) ');
+
+        return
+      }
+
+      setErrorMessage('');
 
       // check if form has everything (as per react-bootstrap docs)
       const form = event.currentTarget;
@@ -127,6 +135,37 @@ const AddExercise = () => {
           <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
         </Form.Group>
 
+        {/* <Form.Group>
+          <Form.Label htmlFor='DayOfTheWeek'>DayOfTheWeek</Form.Label>
+          <Form.Control
+            type='dropDown'
+            placeholder='dayOfTheWeek'
+            name='dayOfTheWeek'
+            onChange={handleInputChange}
+            value={userFormData.dayOfTheWeek}
+          />
+          <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
+        </Form.Group> */}
+
+        <Form.Group controlId="formBasicSelect">
+          <Form.Label>Day of the Week</Form.Label>
+          <Form.Control
+            as="select"
+            placeholder='Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday '
+            name='dayOfTheWeek'
+            value={userFormData.dayOfTheWeek}
+            onChange={handleInputChange}
+          >
+            <option value=""></option>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+          </Form.Control>
+        </Form.Group>
 
         <Button
           disabled={!(userFormData.exerciseName && userFormData.weight)}
@@ -135,7 +174,11 @@ const AddExercise = () => {
           Submit
         </Button>
       </Form>
-
+      {errorMessage && (
+        <div>
+          <p className="error-text">{errorMessage}</p>
+        </div>
+      )}
         
     </>
 
