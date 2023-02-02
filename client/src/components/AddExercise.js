@@ -6,50 +6,59 @@ import Auth from '../utils/auth';
 
 
 const AddExercise = () => {
-    const [userFormData, setUserFormData] = useState({ exerciseName: '', weight: '', sets: '', reps: '', other:'' 
+    const [userFormData, setUserFormData] = useState({ dayOfTheWeek: '', exerciseName: '', weight: '', sets: '', reps: '' , other: ''
     });
+    const [addExercise ] = useMutation(ADD_EXERCISE);
+
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
       };
 
-     const [addExercise, { error, data} ] = useMutation(ADD_EXERCISE);
-
     const handleFormSubmit = async (event) => {
-    event.preventDefault();
+      event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
-    
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
+      // check if form has everything (as per react-bootstrap docs)
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+      }
 
-    if (!token) {
-      return false;
-    }
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    try {
-     
-        const { data } = await addExercise({
-            variables: { ...userFormData },
+      if (!token) {
+        return false;
+      }
+
+      try {
+        console.log(userFormData)
+        
+          const { data } = await addExercise({
+              variables: { 
+                ...userFormData,
+                reps: parseInt(userFormData.reps),
+                sets: parseInt(userFormData.sets),
+                weight: parseInt(userFormData.weight),
+              },
+            });
+            
+            console.log(data);
+            console.log(userFormData);
+
+
+          } catch (err) {
+            console.error(err);
+      }
+
+      setUserFormData({
+          exerciseName: '',
+          weight: '',
+          sets: '',
+          reps: '',
+          other: '',
           });
-          console.log(data);
-  
-        } catch (err) {
-          console.error(err);
-    }
-
-    setUserFormData({
-        exerciseName: '',
-        weight: '',
-        sets: '',
-        reps: '',
-        other: '',
-        });
     };
 
 
@@ -70,7 +79,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='weight'>weight<i class="material-icons">barbell</i></Form.Label>
+          <Form.Label htmlFor='weight'>weight<i className="material-icons">barbell</i></Form.Label>
           <Form.Control
             type='text'
             placeholder='Working Weight'

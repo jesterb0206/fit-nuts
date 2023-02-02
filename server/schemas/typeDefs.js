@@ -35,8 +35,8 @@ const typeDefs = gql `
 
     type Query {
         me: User
-        users:[User]  
-        workout(dayOfTheWeek: String! )[Workout]
+        users: [User]  
+        workout(dayOfTheWeek: String! ): [Workout]
     }
 
     type Mutation {

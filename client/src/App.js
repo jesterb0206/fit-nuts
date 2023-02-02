@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage';
 import Workout from './pages/Workout';
 import WorkoutSummary from './pages/WorkoutSummary';
 
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
