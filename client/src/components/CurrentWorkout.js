@@ -7,20 +7,9 @@ import {QUERY_WORKOUT} from '../utils/queries';
 import {useMutation, useQuery} from '@apollo/client';
 import Auth from '../utils/auth';
 
-const CurrentWorkout = (props,setUserFormData ) => {
-    // console.log(userFormData);
-    const dayOfTheWeek = 'Sunday';
-
-    // const { dayOfTheWeek, exerciseName, weight,sets, reps, other } = userFormData;
-
-    // console.log(props);
-
-    // let dayOfTheWeek = props
-
-    console.log(dayOfTheWeek)
+const CurrentWorkout = ({dayOfTheWeek,setUserFormData }) => {
 
 
-  // const { loading, data } = useQuery(QUERY_ME);
   const {loading, data} = useQuery(QUERY_WORKOUT, {
     variables: { dayOfTheWeek },
   });
