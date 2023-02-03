@@ -25,7 +25,7 @@ const AppNavbar = () => {
             <Nav className='ml-auto'>
               {/* Homepage Link */}
               <Nav.Link className='homeNavLink' as={Link} to='/'>
-                Home
+
               </Nav.Link>
               {Auth.loggedIn() ? (
                 <>

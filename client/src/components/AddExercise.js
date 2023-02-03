@@ -20,8 +20,8 @@ const AddExercise = () => {
 
 
   const [addExercise] = useMutation(ADD_EXERCISE);
-  const [errorMessage, setErrorMessage] = useState('Please check for the following: name, weight, and day of the week :)  ');
-  
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handleInputChange = (event) => {
     const {name, value} = event.target;
     setUserFormData({...userFormData, [name]: value});
