@@ -177,7 +177,7 @@ const AddExercise = () => {
         </Form.Group> */}
 
         <Form.Group controlId='formBasicSelect'>
-          <Form.Label>Day of the Week</Form.Label>
+          <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
           <Form.Control
             as='select'
             placeholder='Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday '
