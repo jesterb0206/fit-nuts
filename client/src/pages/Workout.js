@@ -30,12 +30,12 @@ const Workout = () => {
 
     return (
     <>    
-        <main>
+        <main className='workoutSection'>
         <div>
 
-            <h1> This is there workout page</h1>
+            <h1 className='workoutHeader'> Create Your Workout Session</h1>
 
-           < Exercise />
+           < Exercise className="exerciseComp"/>
            < CurrentWorkout />
            < AddExercise /> 
         </div>

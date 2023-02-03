@@ -6,11 +6,25 @@ const { signToken }= require('../utils/auth')
 const resolvers = {
 
     Query: {
-        me: async(parent, args, context ) => {
+        me: async(parent, {userId}, context ) => {
             if( context.user ) {
-                return await User.findOne({ _id: context.user._id}).select('-__v -password');
+                const user = User.findOne({ _id: context.user._id}).select('-__v -password').populate('workout');
+                console.log(user)
+                return await User.findOne({ _id: context.user._id}).select('-__v -password').populate('workout');
+
+                // const user = User.findOne({ _id: userId._id}).select('-__v -password')
+                // console.log(user)
+                // return await User.findOne({ _id: userId._id}).select('-__v -password');
             }
             throw new AuthenticationError('You need to be logged in!');
+        },
+        workout: async(parent, {dayOfTheWeek}, context ) => {
+            // if( context.user ) {
+                const user = Workout.find({ dayOfTheWeek: dayOfTheWeek}).select('-__v -password')
+                console.log(user)
+                return await Workout.find({ dayOfTheWeek: dayOfTheWeek}).select('-__v -password')
+            // }
+            // throw new AuthenticationError('You need to be logged in!');
         },
     },
 
@@ -40,19 +54,19 @@ const resolvers = {
         addExercise: async(parent, { dayOfTheWeek, exerciseName, weight, sets, reps, other }, context) => {
             // console.log(context.user);
             // console.log(context.user._id);
-            // if(context.user) 
+            if(context.user) 
             
-            // {
+            {
             const workout = await Workout.create({ dayOfTheWeek, exerciseName, weight, sets, reps, other });
 
-            // await User.findOneAndUpdate(
-            //     {_id: context.user._id},
-            //     { $addToSet: { workouts: workout._id }}
-            // )
+            await User.findOneAndUpdate(
+                {_id: context.user._id},
+                { $addToSet: { workouts: workout._id }}
+            )
 
             return workout;
-            // }
-            // throw new AuthenticationError('You need to be logged in!');
+            }
+            throw new AuthenticationError('You need to be logged in!');
         },
         removeWorkout: async(parent, { workoutId }, context  ) => {
             if(context.user) {
@@ -94,6 +108,26 @@ const resolvers = {
                         runValidators: true,
                       }
                 )
+            }
+        },
+        updateWorkoutDay: async(parent, { dayOfTheWeek }, context) => {
+
+            if(context.user) {
+                await Workout.findOneAndDelete(
+                    {dayOfTheWeek: dayOfTheWeek}
+                )
+                await User.findOneAndUpdate(
+                    {workout_id: workout_id}
+                )
+                const workout = await Workout.create({ dayOfTheWeek, exerciseName, weight, sets, reps, other });
+
+                    await User.findOneAndUpdate(
+                        {_id: context.user._id},
+                        { $addToSet: { workouts: workout._id }}
+                    )
+
+                    return workout;
+                                
             }
         }
     }

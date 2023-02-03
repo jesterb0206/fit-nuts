@@ -7,24 +7,25 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      savedBooks{
-        authors
-        bookId
-        description
-        title
-        image
-        link
+      workout {
+        _id
+        dayOfTheWeek
+        exerciseName
+        weight
+        sets
+        reps
+        other
       }
     }
   }
 `
 
 export const QUERY_WORKOUT = gql`
-  query getWorkout{
-    workout{
+  query workout($dayOfTheWeek: String!) {
+    workout(dayOfTheWeek: $dayOfTheWeek) {
+      _id
       dayOfTheWeek
       exerciseName
-      workoutId
       weight
       sets
       reps

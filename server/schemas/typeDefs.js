@@ -3,16 +3,16 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql `
 
     type User {
-        _id: ID
+        _id: ID!
         username: String
         email: String
         workout: [Workout]
     }
 
     type Workout {
+        _id: ID!
         dayOfTheWeek: String!
         exerciseName: String!
-        workoutId: ID!
         weight: Int!
         sets: Int
         reps: Int
@@ -36,7 +36,7 @@ const typeDefs = gql `
     type Query {
         me: User
         users: [User]  
-        workout(dayOfTheWeek: String! ): [Workout]
+        workout( dayOfTheWeek: String! ): [Workout]
     }
 
     type Mutation {
@@ -47,6 +47,7 @@ const typeDefs = gql `
         updateSets(_id: ID!, sets: Int): Workout
         updateReps( _id: ID!, reps: Int) : Workout
         summaryPage(summary: MessageInput ): User
+        updateWorkoutDay(dayOfTheWeek: String, exerciseName: String!, weight: Int!, sets: Int, reps: Int, other: String) : Workout
     }
 `
 

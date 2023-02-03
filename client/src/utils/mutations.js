@@ -90,5 +90,31 @@ export const SUMMARY_PAGE = gql`
   }  
 `
 
-
+export const UPDATE_WORKOUT = gql`
+  mutation updateWorkout(
+    $dayOfTheWeek: String,
+        $exerciseName: String!,
+        $weight: Int!,
+        $sets: Int,
+        $reps: Int,
+        $other: String
+    )  {
+      updateWorkout(
+        dayOfTheWeek: $dayOfTheWeek,
+        exerciseName: $exerciseName,
+        weight: $weight,
+        sets: $sets,
+        reps: $reps,
+        other: $other
+        )
+        {
+          dayOfTheWeek
+          exerciseName
+          weight
+          sets
+          reps
+          other
+        }
+      }
+`
 
