@@ -8,17 +8,17 @@ const Exercise = () => {
   return (
     <div className='d-flex justify-content-center'>
       <div></div>
-      <button> - remove exercise</button>
-      <h1> Example exercise 1</h1>
-      <p>Weight</p>
-      <p> set: 1 x 12</p>
+      {/* <button> - remove exercise</button> */}
+      {/* <h1> Example exercise 1</h1> */}
+      {/* <p>Weight</p> */}
+      {/* <p> set: 1 x 12</p> */}
       <button>
         {' '}
-        + used to increase set<i className='material-icons'>barbell</i>
+        {/* + used to increase set<i className='material-icons'>barbell</i> */}
       </button>
       <button>
         {' '}
-        - used to decrease set<i className='material-icons'>barbell</i>
+        {/* - used to decrease set<i className='material-icons'>barbell</i> */}
       </button>
     </div>
   );

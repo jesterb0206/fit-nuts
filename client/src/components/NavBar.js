@@ -17,7 +17,7 @@ const AppNavbar = () => {
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            Ｆｉｔ 🄽🅄🅃🅂
+          🄵🄸🅃 ❚█══█❚ 🄽🅄🅃🅂
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
@@ -25,7 +25,7 @@ const AppNavbar = () => {
               {/* Navbar Links to the different pages */}
               {/* Homepage Link */}
               <Nav.Link className='homeNavLink' as={Link} to='/'>
-                Home
+              {/* ▁ ▂ ▄ ▅ ▆ ▇ █❚█══█❚█ ▇ ▆ ▅ ▄ ▂ ▁ */}
               </Nav.Link>
               {/* Workout Link */}
               <Nav.Link className='workoutNavLink' as={Link} to='/workout'>
@@ -40,20 +40,19 @@ const AppNavbar = () => {
                 Workout Summary
               </Nav.Link>
               <Nav.Link as={Link} to='/'>
-                ▁ ▂ ▄ ▅ ▆ ▇ █❚█══█❚█ ▇ ▆ ▅ ▄ ▂ ▁
+               
               </Nav.Link>
 
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
-                    See Your Books
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>
-                  𝐋𝐨𝐠𝐢𝐧/ 𝐒𝐢𝐠𝐧 𝐔𝐩
+                 Login/ Sign Up
                 </Nav.Link>
               )}
             </Nav>
