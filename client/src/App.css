@@ -97,8 +97,14 @@ tr {
 
 /* --------------------------------- Create Workout Section ------------------------------------------------- */
 
+.currentWorkout {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .workoutSection {
-  background-image: url('../src/images/blank-wall.jpg');
+  background-image: url('../src/images/gym.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -116,10 +122,16 @@ tr {
   justify-content: center;
   padding: 10px;
   margin: 15px;
+  background-color: var(--off-white);
+  border: 2px solid rgba(234, 36, 32, 1);
+  border-radius: 20px; 
 }
 
 .addExerciseForm {
-  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* margin-top: 250px;
   padding: 20px;
   background: linear-gradient(
     135deg,
@@ -131,17 +143,40 @@ tr {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  margin: 50px;
+  margin: 50px; */
+  background-color: var(--off-white);
+  border: 1px solid rgba(234, 36, 32, 1);
+  border-radius: 20px;
+  box-shadow: 12px 12px 2px 1px rgba(236, 36, 32, 0.75);
+  cursor: pointer;
+  /* height: 600px; */
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 1000px;
+  padding: 10px;
+  /* width: 90%; */
+  align-items: center;
 }
+
 
 .inputNameTitle {
   font-size: 25px;
-  color: rgb(48, 214, 15);
-  text-shadow: 0 0 10 rgba(48, 214, 15), 0 0 20 rgb(48, 214, 15),
-    0 0 40 rgb(48, 214, 15), 0 0 80 rgb(48, 214, 15),
-    0 0 160 rgb(48, 214, 15) 0 0 320 rgb(48, 214, 15);
+  color: rgb(214, 15, 15);
 }
 
 .exerciseSubmitBtn {
-  margin: 5px;
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ----------Notification/Error Message--------- */
+.error-text {
+  font-size: 30px;
+  color: white;
 }

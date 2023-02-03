@@ -80,7 +80,7 @@ const AddExercise = () => {
 
   return (
     <>
-      <CurrentWorkout dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
+      <CurrentWorkout className='currentWorkout' dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
@@ -101,7 +101,7 @@ const AddExercise = () => {
 
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='weight'>
-            Weight<i className='material-icons'>barbell</i>
+            Weight
           </Form.Label>
           <Form.Control
             type='text'
@@ -204,6 +204,8 @@ const AddExercise = () => {
         >
           Submit
         </Button>
+
+
       </Form>
       {errorMessage && (
         <div>
