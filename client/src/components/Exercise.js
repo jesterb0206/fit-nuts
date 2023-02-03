@@ -6,7 +6,7 @@ const styles = {};
 
 const Exercise = () => {
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='exerciseBtns'>
       <div></div>
       {/* <button> - remove exercise</button> */}
       {/* <h1> Example exercise 1</h1> */}
