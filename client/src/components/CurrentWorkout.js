@@ -6,6 +6,8 @@ import {QUERY_ME} from '../utils/queries';
 import {QUERY_WORKOUT} from '../utils/queries';
 import {useMutation, useQuery} from '@apollo/client';
 import Auth from '../utils/auth';
+import DeleteButton from './DeleteButton';
+
 
 const CurrentWorkout = ({dayOfTheWeek}) => {
 
@@ -14,7 +16,7 @@ const CurrentWorkout = ({dayOfTheWeek}) => {
     variables: { dayOfTheWeek },
   });
   
-  const {loading, error} = useMutation(REMOVE_WORKOUT)
+  // const {loading, error} = useMutation(REMOVE_WORKOUT)
 
   const userData = data?.me || {};
   console.log(data);
@@ -74,12 +76,7 @@ const CurrentWorkout = ({dayOfTheWeek}) => {
                   >
                     Decrease reps
                   </Button>
-                  <Button
-                    className='btn-block btn-danger'
-                    onClick={() => removeWorkout()}
-                  >
-                    Delete Exercise
-                  </Button>
+                  <DeleteButton />
                 </Card.Body>
               </Card>
             );

@@ -118,3 +118,18 @@ export const UPDATE_WORKOUT = gql`
       }
 `
 
+export const DELETE_WORKOUT = gql`
+  mutation deleteWorkout(
+        $_id: ID!
+    )  {
+      deleteWorkout(
+        _id: $_id,
+        )
+        {
+          user {
+            _id
+            username
+          }
+        }
+      }
+`
