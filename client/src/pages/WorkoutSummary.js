@@ -8,6 +8,7 @@ import Card from '.././components/Card';
 // import '../App.css';
 
 function WorkoutSummary() {
+ 
   const {loading, data} = useQuery(QUERY_WORKOUT);
   const workouts = data?.workout || [];
   return (

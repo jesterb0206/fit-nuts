@@ -20,7 +20,7 @@ const AddExercise = () => {
 
 
   const [addExercise] = useMutation(ADD_EXERCISE);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('Please check for the following: name, weight, and day of the week :)  ');
   
   const handleInputChange = (event) => {
     const {name, value} = event.target;
@@ -80,11 +80,34 @@ const AddExercise = () => {
 
   return (
     <>
-      <CurrentWorkout dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
+      <CurrentWorkout dayOfTheWeek={userFormData.dayOfTheWeek}/>
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
+
+        
+      <Form.Group controlId='formBasicSelect'>
+          <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
+          <Form.Control
+            as='select'
+            placeholder='Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday '
+            name='dayOfTheWeek'
+            value={userFormData.dayOfTheWeek}
+            onChange={handleInputChange}
+          >
+            <option value=''></option>
+            <option value='Sunday'>Sunday</option>
+            <option value='Monday'>Monday</option>
+            <option value='Tuesday'>Tuesday</option>
+            <option value='Wednesday'>Wednesday</option>
+            <option value='Thursday'>Thursday</option>
+            <option value='Friday'>Friday</option>
+            <option value='Saturday'>Saturday</option>
+          </Form.Control>
+        </Form.Group>
+
+
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
-            Name
+            Name - required
           </Form.Label>
           <Form.Control
             type='text'
@@ -101,7 +124,7 @@ const AddExercise = () => {
 
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='weight'>
-            Weight<i className='material-icons'>barbell</i>
+            Weight - required
           </Form.Label>
           <Form.Control
             type='text'
@@ -176,25 +199,6 @@ const AddExercise = () => {
           <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
         </Form.Group> */}
 
-        <Form.Group controlId='formBasicSelect'>
-          <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
-          <Form.Control
-            as='select'
-            placeholder='Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday '
-            name='dayOfTheWeek'
-            value={userFormData.dayOfTheWeek}
-            onChange={handleInputChange}
-          >
-            <option value=''></option>
-            <option value='Sunday'>Sunday</option>
-            <option value='Monday'>Monday</option>
-            <option value='Tuesday'>Tuesday</option>
-            <option value='Wednesday'>Wednesday</option>
-            <option value='Thursday'>Thursday</option>
-            <option value='Friday'>Friday</option>
-            <option value='Saturday'>Saturday</option>
-          </Form.Control>
-        </Form.Group>
 
         <Button
           className='exerciseSubmitBtn'

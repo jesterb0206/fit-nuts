@@ -48,6 +48,7 @@ const typeDefs = gql `
         updateReps( _id: ID!, reps: Int) : Workout
         summaryPage(summary: MessageInput ): User
         updateWorkoutDay(dayOfTheWeek: String, exerciseName: String!, weight: Int!, sets: Int, reps: Int, other: String) : Workout
+        deleteExercise(_id: ID!): User
     }
 `
 
