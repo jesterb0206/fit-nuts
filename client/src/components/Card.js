@@ -15,7 +15,6 @@ const Card = ({dayOfTheWeek}) => {
   return (
     <div className='card'>
       <h1 id='center__text'>{dayOfTheWeek}</h1>
-      {/* {workout.map((workout) */}
       <table>
           <tr>
             <th>Workout</th>
