@@ -186,3 +186,49 @@ tr {
     justify-content: center;
     align-items: center;
   }
+
+
+
+
+  /* -------------------About Us/Meet the Devs Section---------------- */
+
+.aboutUsSection {
+  background-image: url('./images/lifting-blue.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.aboutHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 
+  0 0 7px blue,
+  0 0 10px #fff,
+  0 0 21px blue,
+  0 0 42px blue,
+  0 0 82px blue,
+  0 0 92px blue, 
+  0 0 102px blue,
+  0 0 150px blue;
+}
+
+.aboutParagraph {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+}
