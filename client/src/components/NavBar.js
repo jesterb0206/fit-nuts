@@ -30,17 +30,29 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   {/* Start Workout Link */}
-                  <Nav.Link className='workoutNavLink' as={Link} to='/workout'>
-                    Start Workout
+                  <Nav.Link 
+                  className='workoutNavLink' 
+                  as={Link} 
+                  to='/workout'>
+                    Create Workout
                   </Nav.Link>
+
                   {/* Workout Summary Link */}
                   <Nav.Link
                     className='summaryNavLink'
                     as={Link}
-                    to='/workoutSummary'
-                  >
+                    to='/workoutSummary'>
                     Workout Summary
                   </Nav.Link>
+
+                  {/* About us Link */}
+                  <Nav.Link
+                    className='aboutNavLink'
+                    as={Link}
+                    to='/About'>
+                      Meet The Devs
+                  </Nav.Link>
+                  
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
