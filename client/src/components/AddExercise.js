@@ -4,6 +4,8 @@ import {Form, Button, Alert} from 'react-bootstrap';
 import {useMutation} from '@apollo/client';
 import {ADD_EXERCISE} from '../utils/mutations';
 import Auth from '../utils/auth';
+import CurrentWorkout from './CurrentWorkout';
+
 
 const AddExercise = () => {
   const [userFormData, setUserFormData] = useState({
@@ -14,9 +16,12 @@ const AddExercise = () => {
     reps: '',
     other: '',
   });
+  const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
+
+
   const [addExercise] = useMutation(ADD_EXERCISE);
   const [errorMessage, setErrorMessage] = useState('');
-
+  
   const handleInputChange = (event) => {
     const {name, value} = event.target;
     setUserFormData({...userFormData, [name]: value});
@@ -75,6 +80,7 @@ const AddExercise = () => {
 
   return (
     <>
+      <CurrentWorkout dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
