@@ -177,6 +177,12 @@ tr {
 
 /* ----------Notification/Error Message--------- */
 .error-text {
-  font-size: 30px;
-  color: white;
-}
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
