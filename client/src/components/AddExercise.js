@@ -21,7 +21,7 @@ const AddExercise = () => {
 
   const [addExercise] = useMutation(ADD_EXERCISE);
   const [errorMessage, setErrorMessage] = useState('');
-  
+
   const handleInputChange = (event) => {
     const {name, value} = event.target;
     setUserFormData({...userFormData, [name]: value});
