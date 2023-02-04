@@ -1,15 +1,7 @@
 import React from 'react';
 import '../App.css';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_WORKOUT } from '../utils/queries'
 
 const Card = ({ workouts }) => {
-
-  // const { loading, data } = useQuery(QUERY_WORKOUT, {
-  //   variables: { dayOfTheWeek },
-  // });
-  // const workouts = data?.workout || [];
-
 
   if (!workouts.length) {
     return <h3>No Workouts Yet</h3>;
