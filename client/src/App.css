@@ -1,11 +1,13 @@
 /* Color Palette */
 
 :root {
+  --black: #000000;
   --blue: #2b388e;
   --green-gray: #9f9772;
   --off-white: #d6d5c3;
   --purple-blue: #261f62;
   --red: #ea2420;
+  --white: #ffffff;
 }
 
 /* -------------------- Workout Card Section -------------------- */
@@ -13,6 +15,7 @@
 /* An ID to Center Only Specific Elements */
 
 #center__text {
+  color: var(--blue);
   text-align: center;
 }
 
@@ -46,6 +49,32 @@ th,
 tr {
   border: 1px solid black;
   padding-left: 10px;
+}
+
+/* Workout Button Styling */
+
+#centerButton {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#workoutButton {
+  background-color: var(--purple-blue);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  margin-top: 20px;
+  max-width: 400px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 90%;
+}
+
+#workoutButton:active,
+#workoutButton:focus,
+#workoutButton:hover {
+  background-color: var(--blue);
 }
 
 /* -------------------- Home Page Section -------------------- */
@@ -98,7 +127,7 @@ tr {
 /* --------------------------------- Create Workout Section ------------------------------------------------- */
 
 .currentWorkout {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -124,7 +153,7 @@ tr {
   margin: 15px;
   background-color: var(--off-white);
   border: 2px solid rgba(234, 36, 32, 1);
-  border-radius: 20px; 
+  border-radius: 20px;
 }
 
 .addExerciseForm {
@@ -158,7 +187,6 @@ tr {
   align-items: center;
 }
 
-
 .inputNameTitle {
   font-size: 25px;
   color: rgb(214, 15, 15);
@@ -174,23 +202,19 @@ tr {
   align-items: center;
 }
 
-
 /* ----------Notification/Error Message--------- */
 .error-text {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
-
-  /* -------------------About Us/Meet the Devs Section---------------- */
+/* -------------------About Us/Meet the Devs Section---------------- */
 
 .aboutUsSection {
   background-image: url('./images/lifting-blue.jpg');
@@ -212,15 +236,8 @@ tr {
   justify-content: center;
   align-items: center;
   color: #fff;
-  text-shadow: 
-  0 0 7px blue,
-  0 0 10px #fff,
-  0 0 21px blue,
-  0 0 42px blue,
-  0 0 82px blue,
-  0 0 92px blue, 
-  0 0 102px blue,
-  0 0 150px blue;
+  text-shadow: 0 0 7px blue, 0 0 10px #fff, 0 0 21px blue, 0 0 42px blue,
+    0 0 82px blue, 0 0 92px blue, 0 0 102px blue, 0 0 150px blue;
 }
 
 .aboutParagraph {

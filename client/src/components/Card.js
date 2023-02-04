@@ -8,6 +8,7 @@ const Card = ({dayOfTheWeek}) => {
   const {loading, data} = useQuery(QUERY_WORKOUT, {
     variables: {dayOfTheWeek},
   });
+
   const workouts = data?.workout || [];
 
   return (
@@ -33,7 +34,10 @@ const Card = ({dayOfTheWeek}) => {
           <td>8</td>
         </tr>
       </table>
-      <button>Add/Change Workout</button>
+      {/* How do we useState to change the workout button's background-color on hover */}
+      <div id='centerButton'>
+        <button id='workoutButton'>Submit</button>
+      </div>
     </div>
   );
 };
