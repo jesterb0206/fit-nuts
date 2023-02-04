@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, {useState} from 'react';
-import {Form, Button, Alert} from 'react-bootstrap';
-import {useMutation} from '@apollo/client';
-import {ADD_EXERCISE} from '../utils/mutations';
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
+import { useMutation } from '@apollo/client';
+import { ADD_EXERCISE } from '../utils/mutations';
 import Auth from '../utils/auth';
 import CurrentWorkout from './CurrentWorkout';
 
@@ -23,8 +23,8 @@ const AddExercise = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
-    const {name, value} = event.target;
-    setUserFormData({...userFormData, [name]: value});
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
   const handleFormSubmit = async (event) => {
@@ -54,7 +54,7 @@ const AddExercise = () => {
     try {
       console.log(userFormData);
 
-      const {data} = await addExercise({
+      const { data } = await addExercise({
         variables: {
           ...userFormData,
           reps: parseInt(userFormData.reps),
@@ -80,7 +80,7 @@ const AddExercise = () => {
 
   return (
     <>
-      <CurrentWorkout className='currentWorkout' dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
+      <CurrentWorkout className='currentWorkout' dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData} />
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
@@ -150,11 +150,11 @@ const AddExercise = () => {
 
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='other'>
-            Other
+            Notes
           </Form.Label>
           <Form.Control
             type='string'
-            placeholder='other'
+            placeholder='Notes'
             name='other'
             onChange={handleInputChange}
             value={userFormData.other}
