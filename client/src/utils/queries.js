@@ -34,8 +34,8 @@ export const QUERY_WORKOUT = gql`
   }
 `
 export const QUERY_WORKOUTS = gql`
-  query workouts {
-    workout {
+  query allWorkouts {
+    workouts {
       dayOfTheWeek
       exerciseName
       weight

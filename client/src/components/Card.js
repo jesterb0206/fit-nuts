@@ -11,13 +11,11 @@ const Card = ({ workouts }) => {
   //   variables: { dayOfTheWeek },
   // });
   // const workouts = data?.workout || [];
-  console.log(workouts, "on card.js")
-  console.log("before if statement")
+
 
   if (!workouts.length) {
     return <h3>No Workouts Yet</h3>;
   }
-
 
   return (
     <div className='card'>

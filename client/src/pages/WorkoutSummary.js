@@ -10,7 +10,7 @@ import { QUERY_WORKOUTS } from '../utils/queries';
 const WorkoutSummary = () => {
   const { data } = useQuery(QUERY_WORKOUTS);
   const workouts = data?.workouts || [];
-  console.log(workouts, "on WorkoutSummary.js")
+
   return (
     <div className='workout__summary'>
       <h1 id='center__text'>Workout Summary</h1>
