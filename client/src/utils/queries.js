@@ -33,3 +33,15 @@ export const QUERY_WORKOUT = gql`
     }
   }
 `
+export const QUERY_PROFILES = gql`
+  query allWorkouts {
+    workouts {
+      dayOfTheWeek
+      exerciseName
+      weight
+      sets
+      reps
+      other
+    }
+  }
+`
