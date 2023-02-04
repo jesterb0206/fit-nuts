@@ -27,8 +27,8 @@ const resolvers = {
             // throw new AuthenticationError('You need to be logged in!');
         },
 
-        workouts: async () => {
-            return workouts.find();
+        workouts: async ({ workout }) => {
+            return workout.find();
         },
     },
 

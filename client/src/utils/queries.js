@@ -34,8 +34,8 @@ export const QUERY_WORKOUT = gql`
   }
 `
 export const QUERY_WORKOUTS = gql`
-  query workouts($dayOfTheWeek: String!) {
-    workouts(dayOfTheWeek: $dayOfTheWeek) {
+  query workouts {
+    workout {
       dayOfTheWeek
       exerciseName
       weight

@@ -37,7 +37,6 @@ const typeDefs = gql`
         me: User
         users: [User]
         workout( dayOfTheWeek: String! ): [Workout]
-        workouts( dayOfTheWeek: String! ): [Workout]!
     }
 
     type Mutation {
