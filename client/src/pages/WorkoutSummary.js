@@ -1,38 +1,41 @@
 import React from 'react';
 import Card from '.././components/Card';
-import {useQuery} from '@apollo/client';
-import {QUERY_WORKOUTS} from '../utils/queries';
+import { useQuery } from '@apollo/client';
+import { QUERY_WORKOUTS } from '../utils/queries';
 
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 // import '../App.css';
 
-function WorkoutSummary() {
- 
+const WorkoutSummary = () => {
+  const { loading, data } = useQuery(QUERY_WORKOUTS);
+  const workouts = data?.workouts || [];
+
   return (
     <div ClassName='workout__summary'>
       <h1 id='center__text'>Workout Summary</h1>
       <div className='workout__cards'>
         <Card
-        dayOfTheWeek="Monday"
-        />
-        <Card 
-        dayOfTheWeek="Tuesday"
+          workouts={workouts}
+          dayOfTheWeek="Monday"
         />
         <Card
-        dayOfTheWeek="Wednesday"
+          dayOfTheWeek="Tuesday"
         />
         <Card
-        dayOfTheWeek="Thursday"
+          dayOfTheWeek="Wednesday"
         />
         <Card
-        dayOfTheWeek="Friday"
+          dayOfTheWeek="Thursday"
         />
-        <Card 
-        dayOfTheWeek="Saturday"
+        <Card
+          dayOfTheWeek="Friday"
         />
-        <Card 
-        dayOfTheWeek="Sunday"
+        <Card
+          dayOfTheWeek="Saturday"
+        />
+        <Card
+          dayOfTheWeek="Sunday"
         />
       </div>
     </div>
