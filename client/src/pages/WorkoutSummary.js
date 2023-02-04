@@ -11,6 +11,8 @@ const WorkoutSummary = () => {
   const { data } = useQuery(QUERY_WORKOUTS);
   const workouts = data?.workouts || [];
 
+  console.log(workouts, "this log is on WorkoutSummary.js")
+
   return (
     <div className='workout__summary'>
       <h1 id='center__text'>Workout Summary</h1>
