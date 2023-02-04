@@ -5,12 +5,14 @@ import '../App.css';
 
 
 
-const Card = ({ workouts, dayOfTheWeek }) => {
+const Card = ({ workouts }) => {
 
   // const { loading, data } = useQuery(QUERY_WORKOUT, {
   //   variables: { dayOfTheWeek },
   // });
   // const workouts = data?.workout || [];
+  console.log(workouts, "on card.js")
+  console.log("before if statement")
 
   if (!workouts.length) {
     return <h3>No Workouts Yet</h3>;
@@ -19,7 +21,8 @@ const Card = ({ workouts, dayOfTheWeek }) => {
 
   return (
     <div className='card'>
-      <h1 id='center__text'>{dayOfTheWeek}</h1>
+      {workouts.map((workouts))}
+      <h1 id='center__text' key={workouts.dayOfTheWeek}></h1>
       <table>
         <tr>
           <th>Workout</th>
@@ -35,7 +38,7 @@ const Card = ({ workouts, dayOfTheWeek }) => {
           <td>5</td>
         </tr>
       </table>
-      <button>Add/Change Workout</button>
+      {/* <button>Add/Change Workout</button> */}
     </div>
   );
 }
