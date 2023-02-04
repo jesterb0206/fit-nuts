@@ -14,25 +14,29 @@ const Card = ({dayOfTheWeek}) => {
   return (
     <div className='card'>
       <h1 id='center__text'>{dayOfTheWeek}</h1>
-      <table>
-        <tr>
-          <th>Workout</th>
-          <th>Weight</th>
-          <th>Sets</th>
-          <th>Reps</th>
-        </tr>
-        <tr>
-          <td>something cool</td>
-          <td>141 lb</td>
-          <td>5</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Dumbbell Lateral Raise</td>
-          <td>34 lb</td>
-          <td>2</td>
-          <td>8</td>
-        </tr>
+      <table class='styled-table'>
+        <thead>
+          <tr>
+            <th>Workout</th>
+            <th>Weight</th>
+            <th>Sets</th>
+            <th>Reps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Barbell back squat</td>
+            <td>141 lb</td>
+            <td>5</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Dumbbell Lateral Raise</td>
+            <td>34 lb</td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+        </tbody>
       </table>
       {/* How do we useState to change the workout button's background-color on hover */}
       <div id='centerButton'>

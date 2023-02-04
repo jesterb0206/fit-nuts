@@ -3,6 +3,7 @@
 :root {
   --black: #000000;
   --blue: #2b388e;
+  --green: #009879;
   --green-gray: #9f9772;
   --off-white: #d6d5c3;
   --purple-blue: #261f62;
@@ -44,11 +45,37 @@
 
 /* Table Styling */
 
-td,
-th,
-tr {
-  border: 1px solid black;
-  padding-left: 10px;
+.styled-table {
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 90%;
+}
+
+.styled-table thead tr {
+  background-color: var(--green);
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 20px 20px;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: var(--white);
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--green);
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: var(--green);
 }
 
 /* Workout Button Styling */
