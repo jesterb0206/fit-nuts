@@ -12,14 +12,14 @@ const WorkoutSummary = () => {
   const workouts = data?.workouts || [];
 
   return (
-    <div ClassName='workout__summary'>
+    <div className='workout__summary'>
       <h1 id='center__text'>Workout Summary</h1>
       <div className='workout__cards'>
         <Card
           workouts={workouts}
           dayOfTheWeek="Monday"
         />
-        <Card
+        {/* <Card
           dayOfTheWeek="Tuesday"
         />
         <Card
@@ -36,7 +36,7 @@ const WorkoutSummary = () => {
         />
         <Card
           dayOfTheWeek="Sunday"
-        />
+        /> */}
       </div>
     </div>
   );

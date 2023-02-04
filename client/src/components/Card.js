@@ -5,16 +5,17 @@ import '../App.css';
 
 
 
-const Card = ({ dayOfTheWeek }) => {
-
-  if (!workOust.length) {
-    return <h3>No Workouts Yet</h3>;
-  }
+const Card = ({ workouts, dayOfTheWeek }) => {
 
   // const { loading, data } = useQuery(QUERY_WORKOUT, {
   //   variables: { dayOfTheWeek },
   // });
   // const workouts = data?.workout || [];
+
+  if (!workouts.length) {
+    return <h3>No Workouts Yet</h3>;
+  }
+
 
   return (
     <div className='card'>
