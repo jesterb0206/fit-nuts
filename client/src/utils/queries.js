@@ -33,7 +33,7 @@ export const QUERY_WORKOUT = gql`
     }
   }
 `
-export const QUERY_PROFILES = gql`
+export const QUERY_WORKOUTS = gql`
   query allWorkouts {
     workouts {
       dayOfTheWeek

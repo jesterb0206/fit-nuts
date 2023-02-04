@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { useQuery } from '@apollo/client';
-import { QUERY_WORKOUT } from '../utils/queries'
+// import { useQuery } from '@apollo/client';
+// import { QUERY_WORKOUT } from '../utils/queries'
 
 
 

@@ -1,10 +1,10 @@
+import React from 'react';
+import Card from '.././components/Card';
+import {useQuery} from '@apollo/client';
+import {QUERY_WORKOUTS} from '../utils/queries';
+
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
-
-import React from 'react';
-// import {useQuery} from '@apollo/client';
-// import {QUERY_WORKOUT} from '../utils/queries';
-import Card from '.././components/Card';
 // import '../App.css';
 
 function WorkoutSummary() {
@@ -20,7 +20,7 @@ function WorkoutSummary() {
         dayOfTheWeek="Tuesday"
         />
         <Card
-        dayOfTheWeek="Wensday"
+        dayOfTheWeek="Wednesday"
         />
         <Card
         dayOfTheWeek="Thursday"
@@ -29,7 +29,7 @@ function WorkoutSummary() {
         dayOfTheWeek="Friday"
         />
         <Card 
-        dayOfTheWeek="Saterday"
+        dayOfTheWeek="Saturday"
         />
         <Card 
         dayOfTheWeek="Sunday"
