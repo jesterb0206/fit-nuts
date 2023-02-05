@@ -12,9 +12,11 @@ const AppNavbar = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  // Returns the Navigation Bar
+
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar sticky='top' className='navBarColor' variant='dark' expand='sm'>
         <Container fluid>
           {/* Redirects to Homepage */}
           <Navbar.Brand as={Link} to='/'>
@@ -24,35 +26,25 @@ const AppNavbar = () => {
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               {/* Homepage Link */}
-              <Nav.Link className='homeNavLink' as={Link} to='/'>
-
-              </Nav.Link>
+              <Nav.Link className='homeNavLink' as={Link} to='/'></Nav.Link>
               {Auth.loggedIn() ? (
                 <>
                   {/* Start Workout Link */}
-                  <Nav.Link 
-                  className='workoutNavLink' 
-                  as={Link} 
-                  to='/workout'>
+                  <Nav.Link className='workoutNavLink' as={Link} to='/workout'>
                     Create Workout
                   </Nav.Link>
-
                   {/* Workout Summary Link */}
                   <Nav.Link
                     className='summaryNavLink'
                     as={Link}
-                    to='/workoutSummary'>
+                    to='/workoutSummary'
+                  >
                     Workout Summary
                   </Nav.Link>
-
-                  {/* About us Link */}
-                  <Nav.Link
-                    className='aboutNavLink'
-                    as={Link}
-                    to='/About'>
-                      Meet The Devs
+                  {/* About Us Link */}
+                  <Nav.Link className='aboutNavLink' as={Link} to='/About'>
+                    Meet The Devs
                   </Nav.Link>
-                  
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
@@ -71,7 +63,7 @@ const AppNavbar = () => {
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'
       >
-        {/* A Tab Container to Do either the Signup or Login Component */}
+        {/* A Tab Container to do Either the Signup or Login Component */}
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>

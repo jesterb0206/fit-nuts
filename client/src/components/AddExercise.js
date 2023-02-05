@@ -6,7 +6,6 @@ import {ADD_EXERCISE} from '../utils/mutations';
 import Auth from '../utils/auth';
 import CurrentWorkout from './CurrentWorkout';
 
-
 const AddExercise = () => {
   const [userFormData, setUserFormData] = useState({
     dayOfTheWeek: '',
@@ -17,7 +16,6 @@ const AddExercise = () => {
     other: '',
   });
   const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
-
 
   const [addExercise] = useMutation(ADD_EXERCISE);
   const [errorMessage, setErrorMessage] = useState('');
@@ -38,7 +36,8 @@ const AddExercise = () => {
 
     setErrorMessage('');
 
-    // check if form has everything (as per react-bootstrap docs)
+    // Checks to See if the User Inputted Everything Correctly (as per the React Bootstrap documentation)
+
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -78,9 +77,15 @@ const AddExercise = () => {
     });
   };
 
+  // Returns the Create Your Workout Session Form
+
   return (
     <>
-      <CurrentWorkout className='currentWorkout' dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
+      <CurrentWorkout
+        className='currentWorkout'
+        dayOfTheWeek={userFormData.dayOfTheWeek}
+        setUserFormData={setUserFormData}
+      />
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
@@ -95,87 +100,70 @@ const AddExercise = () => {
             required
           />
           <Form.Control.Feedback type='invalid'>
-            Name is required!
+            An exercise's name is required!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='weight'>
             Weight
           </Form.Label>
           <Form.Control
             type='text'
-            placeholder='Working Weight'
+            placeholder='Weight'
             name='weight'
             onChange={handleInputChange}
             value={userFormData.weight}
             required
           />
           <Form.Control.Feedback type='invalid'>
-            Working Weight is required!
+            Weight is a required field!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='sets'>
             Sets
           </Form.Label>
           <Form.Control
             type='number'
-            placeholder='number of sets'
+            placeholder='Number of Sets'
             name='sets'
             onChange={handleInputChange}
             value={userFormData.sets}
           />
           <Form.Control.Feedback type='invalid'>
-            Valid set is required!
+            A valid number of sets is required!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='reps'>
             Reps
           </Form.Label>
           <Form.Control
             type='number'
-            placeholder='number of reps'
+            placeholder='Number of Reps'
             name='reps'
             onChange={handleInputChange}
             value={userFormData.reps}
           />
           <Form.Control.Feedback type='invalid'>
-            Valid set is required!
+            A valid number of reps is required!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='other'>
             Other
           </Form.Label>
           <Form.Control
             type='string'
-            placeholder='other'
+            placeholder='Other'
             name='other'
             onChange={handleInputChange}
             value={userFormData.other}
           />
           <Form.Control.Feedback type='invalid'>
-            Valid set is required!
+            Invalid response!
           </Form.Control.Feedback>
         </Form.Group>
-
-        {/* <Form.Group>
-          <Form.Label htmlFor='DayOfTheWeek'>DayOfTheWeek</Form.Label>
-          <Form.Control
-            type='dropDown'
-            placeholder='dayOfTheWeek'
-            name='dayOfTheWeek'
-            onChange={handleInputChange}
-            value={userFormData.dayOfTheWeek}
-          />
-          <Form.Control.Feedback type='invalid'>Valid set is required!</Form.Control.Feedback>
-        </Form.Group> */}
-
         <Form.Group controlId='formBasicSelect'>
           <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
           <Form.Control
@@ -195,17 +183,12 @@ const AddExercise = () => {
             <option value='Saturday'>Saturday</option>
           </Form.Control>
         </Form.Group>
-
         <Button
-          className='exerciseSubmitBtn'
           disabled={!(userFormData.exerciseName && userFormData.weight)}
-          type='submit'
-          variant='success'
+          type='primary'
         >
           Submit
         </Button>
-
-
       </Form>
       {errorMessage && (
         <div>
