@@ -12,8 +12,8 @@ const AddExercise = () => {
     dayOfTheWeek: '',
     exerciseName: '',
     weight: '',
-    sets: '',
-    reps: '',
+    sets: '0',
+    reps: '0',
     other: '',
   });
   const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
@@ -52,7 +52,6 @@ const AddExercise = () => {
     }
 
     try {
-      console.log(userFormData);
 
       const {data} = await addExercise({
         variables: {
@@ -63,8 +62,7 @@ const AddExercise = () => {
         },
       });
 
-      console.log(data);
-      console.log(userFormData);
+
     } catch (err) {
       console.error(err);
     }
@@ -72,8 +70,8 @@ const AddExercise = () => {
     setUserFormData({
       exerciseName: '',
       weight: '',
-      sets: '',
-      reps: '',
+      sets: '0',
+      reps: '0',
       other: '',
     });
   };
