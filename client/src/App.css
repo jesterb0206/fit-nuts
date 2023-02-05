@@ -16,8 +16,122 @@
   background-color: var(--purple);
 }
 
-.navbar-toggle-icon {
-  background-color: white;
+/* -------------------- Log In / Sign Up Form Styling -------------------- */
+
+.modal-header button {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: var(--white);
+  background-color: var(--purple);
+}
+
+a {
+  color: rgba(65, 36, 84, 0.5);
+}
+
+a:active,
+a:hover,
+a:active {
+  color: rgba(65, 36, 84, 1);
+}
+
+.form-group {
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.form-control:focus,
+.form-control:not(active) {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: var(--white);
+}
+
+/* Change Autocomplete Styles in Chrome */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px var(--orange) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Log In / Sign Up Button Styling */
+
+.btn-submit {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 400px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 90%;
+}
+
+/* Button Pseudo Class Styling */
+
+.btn-submit:active,
+.btn-submit:focus,
+.btn-submit:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+/* Disabled Button Styling */
+
+.btn-submit:disabled {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-submit:disabled:active,
+.btn-submit:disabled:focus,
+.btn-submit:disabled:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Alert Styling */
+
+.alert-danger {
+  background-color: var(--yellow);
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 /* -------------------- Home Page Section -------------------- */
@@ -244,6 +358,9 @@ table {
   border: none;
   border-radius: 1000px;
   color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   margin-bottom: 20px;
   margin-top: 20px;
   max-width: 400px;

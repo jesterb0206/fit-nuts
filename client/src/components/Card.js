@@ -12,9 +12,12 @@ const Card = ({dayOfTheWeek}) => {
 
   const workouts = data?.workout || [];
 
+  // Returns Workout Summary Card Content
+
   return (
     <div className='card example'>
       <h1 id='center__text'>{dayOfTheWeek}</h1>
+      {/* Workout Summary Table */}
       <table class='styled-table'>
         <thead>
           <tr>
@@ -39,8 +42,9 @@ const Card = ({dayOfTheWeek}) => {
           </tr>
         </tbody>
       </table>
+      {/* Add / Update Workout Button */}
       <div id='centerButton'>
-        <Button variant='primary'>Submit</Button>
+        <Button variant='primary'>Add / Update Workout</Button>
       </div>
     </div>
   );
