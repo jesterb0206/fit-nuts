@@ -194,6 +194,7 @@ select:-webkit-autofill:focus {
   flex-wrap: wrap;
   justify-content: center;
   min-height: 100vh;
+  text-align: center;
 }
 
 /* Create Your Workout Session Header */
@@ -246,13 +247,16 @@ select:-webkit-autofill:focus {
 /* Error Message */
 
 .error-text {
-  align-items: center;
+  background-color: var(--orange);
+  border-radius: 20px;
   color: var(--white);
   display: flex;
+  font-size: 24px;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: 30px;
   justify-content: center;
+  margin: 15px;
+  padding: 10px;
   text-align: center;
 }
 
