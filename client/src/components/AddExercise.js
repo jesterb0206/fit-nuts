@@ -6,7 +6,6 @@ import {ADD_EXERCISE} from '../utils/mutations';
 import Auth from '../utils/auth';
 import CurrentWorkout from './CurrentWorkout';
 
-
 const AddExercise = () => {
   const [userFormData, setUserFormData] = useState({
     dayOfTheWeek: '',
@@ -17,7 +16,6 @@ const AddExercise = () => {
     other: '',
   });
   const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
-
 
   const [addExercise] = useMutation(ADD_EXERCISE);
   const [errorMessage, setErrorMessage] = useState('');
@@ -80,7 +78,11 @@ const AddExercise = () => {
 
   return (
     <>
-      <CurrentWorkout className='currentWorkout' dayOfTheWeek={userFormData.dayOfTheWeek} setUserFormData={setUserFormData}/>
+      <CurrentWorkout
+        className='currentWorkout'
+        dayOfTheWeek={userFormData.dayOfTheWeek}
+        setUserFormData={setUserFormData}
+      />
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
@@ -195,17 +197,12 @@ const AddExercise = () => {
             <option value='Saturday'>Saturday</option>
           </Form.Control>
         </Form.Group>
-
-        <Button
-          className='exerciseSubmitBtn'
+        <button
+          id='workoutButton'
           disabled={!(userFormData.exerciseName && userFormData.weight)}
-          type='submit'
-          variant='success'
         >
           Submit
-        </Button>
-
-
+        </button>
       </Form>
       {errorMessage && (
         <div>
