@@ -1,11 +1,263 @@
 /* Color Palette */
 
 :root {
-  --blue: #2b388e;
-  --green-gray: #9f9772;
-  --off-white: #d6d5c3;
-  --purple-blue: #261f62;
-  --red: #ea2420;
+  --black: #000000;
+  --blue: #26687d;
+  --off-white: #c7b99a;
+  --orange: #f8962e;
+  --purple: #412454;
+  --white: #ffffff;
+  --yellow: #fed346;
+}
+
+/* -------------------- NavBar Styling -------------------- */
+
+.navBarColor {
+  background-color: var(--purple);
+}
+
+/* -------------------- Log In / Sign Up Form Styling -------------------- */
+
+.modal-header button {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: var(--white);
+  background-color: var(--purple);
+}
+
+a {
+  color: rgba(65, 36, 84, 0.5);
+}
+
+a:active,
+a:hover,
+a:active {
+  color: rgba(65, 36, 84, 1);
+}
+
+.form-group {
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.form-control:focus,
+.form-control:not(active) {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: var(--white);
+}
+
+/* Change Autocomplete Styles in Chrome */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px var(--orange) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Log In / Sign Up Button Styling */
+
+.btn-submit {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 400px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 90%;
+}
+
+/* Button Pseudo Class Styling */
+
+.btn-submit:active,
+.btn-submit:focus,
+.btn-submit:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+/* Disabled Button Styling */
+
+.btn-submit:disabled {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-submit:disabled:active,
+.btn-submit:disabled:focus,
+.btn-submit:disabled:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Alert Styling */
+
+.alert-danger {
+  background-color: var(--yellow);
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* -------------------- Home Page Section -------------------- */
+
+/* Background Image & Flex Layout */
+
+.homepageSection {
+  background-image: url('../src/images/workout-1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Welcome to Fit NUTS Header */
+
+.welcomeHeader {
+  border-bottom: 10px solid var(--orange);
+  color: var(--black);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Fit Nuts Blurb */
+
+.introParagraph {
+  border: 10px;
+  box-shadow: 2px 0px 5px #999;
+  color: var(--black);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 25px;
+  justify-content: center;
+  margin: 20px;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+/* -------------------- Create Workout Section -------------------- */
+
+/* Create Your Workout Session Container */
+
+.workoutSection {
+  background-image: url('../src/images/gym.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Create Your Workout Session Header */
+
+.workoutHeader {
+  background-color: var(--orange);
+  border-radius: 20px;
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Workout Form Centering */
+
+.currentWorkout {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Workout Form Styling */
+
+.addExerciseForm {
+  align-items: center;
+  background-color: var(--off-white);
+  border-radius: 20px;
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 1000px;
+  padding: 10px;
+}
+
+/* Input Title Styling */
+
+.inputNameTitle {
+  color: var(--black);
+  font-size: 25px;
+}
+
+/* Error Message */
+
+.error-text {
+  background-color: var(--orange);
+  border-radius: 20px;
+  color: var(--white);
+  display: flex;
+  font-size: 24px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px;
+  padding: 10px;
+  text-align: center;
 }
 
 /* -------------------- Workout Card Section -------------------- */
@@ -13,6 +265,7 @@
 /* An ID to Center Only Specific Elements */
 
 #center__text {
+  color: var(--black);
   text-align: center;
 }
 
@@ -28,207 +281,204 @@
 
 .card {
   background-color: var(--off-white);
-  border: 1px solid rgba(234, 36, 32, 1);
+  border: 1px solid var(--purple);
   border-radius: 20px;
-  box-shadow: 12px 12px 2px 1px rgba(236, 36, 32, 0.75);
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
   cursor: pointer;
   height: 600px;
   margin-bottom: 30px;
   max-width: 1000px;
+  /* Makes the Workout Summary Cards Horizontally / Vertically Scrollable if There's Overflow */
+  overflow-x: scroll;
+  overflow-y: display;
   padding: 10px;
   width: 90%;
 }
 
+/* Useful For Overflow Issues */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.example {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* Table Styling */
 
-td,
-th,
-tr {
-  border: 1px solid black;
-  padding-left: 10px;
+/* Now the Tables Won't Word Wrap On Horizontal Overflow */
+
+table {
+  white-space: nowrap;
 }
 
-/* -------------------- Home Page Section -------------------- */
-
-.homepageSection {
-  background-image: url('../src/images/workout-1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+.styled-table {
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
 }
 
-.welcomeHeader {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin: 20px;
-  border: 10px;
-  padding: 10px;
-  text-align: center;
-  color: rgb(5, 5, 105);
-  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 5);
+.styled-table thead tr {
+  background-color: var(--orange);
+  color: var(--white);
+  text-align: left;
 }
 
-.introParagraph {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin: 20px;
-  border: 10px;
-  padding: 20px;
-  text-align: center;
-  font-size: 25px;
-  box-shadow: 2px 0px 5px #999;
-  /* border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px);
-  border:2px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
-  min-height: 100vh;
-  color: rgb(3, 1, 33);
+.styled-table th,
+.styled-table td {
+  padding: 20px 20px;
 }
 
-/* --------------------------------- Create Workout Section ------------------------------------------------- */
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: var(--white);
+}
 
-.currentWorkout {
-  display:flex;
-  justify-content: center;
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--purple);
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+}
+
+/* An ID For Centering Buttons */
+
+#centerButton {
   align-items: center;
-}
-
-.workoutSection {
-  background-image: url('../src/images/gym.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
-  min-height: 100vh;
 }
 
-.workoutHeader {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
-  margin: 15px;
-  background-color: var(--off-white);
-  border: 2px solid rgba(234, 36, 32, 1);
-  border-radius: 20px; 
-}
+/* Workout Button Styling */
 
-.addExerciseForm {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  /* margin-top: 250px;
-  padding: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(30px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  margin: 50px; */
-  background-color: var(--off-white);
-  border: 1px solid rgba(234, 36, 32, 1);
-  border-radius: 20px;
-  box-shadow: 12px 12px 2px 1px rgba(236, 36, 32, 0.75);
-  cursor: pointer;
-  /* height: 600px; */
-  margin-bottom: 30px;
+.btn-primary {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin-bottom: 20px;
   margin-top: 20px;
-  max-width: 1000px;
-  padding: 10px;
-  /* width: 90%; */
-  align-items: center;
+  max-width: 400px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 90%;
 }
 
+/* Button Pseudo Class Styling */
 
-.inputNameTitle {
-  font-size: 25px;
-  color: rgb(214, 15, 15);
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+  background-color: var(--purple);
 }
 
-.exerciseSubmitBtn {
-  margin: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+/* Disabled Button Styling */
+
+.btn-primary:disabled {
+  background-color: var(--blue);
 }
 
+.btn-primary:disabled:active,
+.btn-primary:disabled:focus,
+.btn-primary:disabled:hover {
+  background-color: var(--blue);
+}
 
-/* ----------Notification/Error Message--------- */
-.error-text {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
+/* -------------------- Meet the Devs Section -------------------- */
 
-
-
-
-  /* -------------------About Us/Meet the Devs Section---------------- */
+/* About Us Container */
 
 .aboutUsSection {
-  background-image: url('./images/lifting-blue.jpg');
+
+  background-image: url('./images/gym.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
+/* Meet the Developers Header */
+
 .aboutHeader {
-  display: flex;
+  align-items: center;
+  color: var(--white);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-shadow: 
-  0 0 7px blue,
-  0 0 10px #fff,
-  0 0 21px blue,
-  0 0 42px blue,
-  0 0 82px blue,
-  0 0 92px blue, 
-  0 0 102px blue,
-  0 0 150px blue;
+  text-shadow: 0 0 7px blue, 0 0 10px #fff, 0 0 21px blue, 0 0 42px blue,
+    0 0 82px blue, 0 0 92px blue, 0 0 102px blue, 0 0 150px blue;
 }
 
+/* About Us Blurb */
+
 .aboutParagraph {
+  align-items: center;
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 25px;
+}
+
+  color: rgb(1, 1, 1);
+  margin: 50px;
+  background-color: var(--off-white);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.linksSection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
-  color: white;
+  display: -ms-inline-grid;
+}
+
+#devBoxes {
+  background-color: var(--off-white);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.dev1Picture {
+  height: 250px;
+}
+
+.dev2Picture {
+  height: 250px;
+}
+
+.dev3Picture {
+  height: 250px;
+}
+
+.dev4Picture {
+  height: 250px;
+}
+
+#githubLinks {
+  background-color: #261f62;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px;
 }

@@ -1,11 +1,7 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-no-undef */
-
 import React from 'react';
-// import {useQuery} from '@apollo/client';
-// import {QUERY_WORKOUT} from '../utils/queries';
 import Card from '.././components/Card';
-// import '../App.css';
+
+// Function That Returns the Workout Summary Heading & Cards
 
 function WorkoutSummary() {
   return (
