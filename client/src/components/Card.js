@@ -13,7 +13,7 @@ const Card = ({dayOfTheWeek}) => {
   const workouts = data?.workout || [];
 
   return (
-    <div className='card'>
+    <div className='card example'>
       <h1 id='center__text'>{dayOfTheWeek}</h1>
       <table class='styled-table'>
         <thead>
