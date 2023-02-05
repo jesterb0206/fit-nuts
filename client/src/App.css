@@ -398,8 +398,10 @@ table {
 /* About Us Container */
 
 .aboutUsSection {
-  align-items: center;
-  background-image: url('./images/lifting-blue.jpg');
+
+  background-image: url('./images/gym.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -431,5 +433,52 @@ table {
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 25px;
+}
+
+  color: rgb(1, 1, 1);
+  margin: 50px;
+  background-color: var(--off-white);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.linksSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  display: -ms-inline-grid;
+}
+
+#devBoxes {
+  background-color: var(--off-white);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.dev1Picture {
+  height: 250px;
+}
+
+.dev2Picture {
+  height: 250px;
+}
+
+.dev3Picture {
+  height: 250px;
+}
+
+.dev4Picture {
+  height: 250px;
+}
+
+#githubLinks {
+  background-color: #261f62;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px;
 }
