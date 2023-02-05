@@ -398,10 +398,8 @@ table {
 /* About Us Container */
 
 .aboutUsSection {
-
+  align-items: center;
   background-image: url('./images/gym.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -416,7 +414,8 @@ table {
 
 .aboutHeader {
   align-items: center;
-  color: var(--white);
+  color: #fff;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -428,17 +427,15 @@ table {
 
 .aboutParagraph {
   align-items: center;
-  color: var(--white);
+  background-color: var(--off-white);
+  border-radius: 10px;
+  color: rgb(1, 1, 1);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 25px;
-}
-
-  color: rgb(1, 1, 1);
+  justify-content: center;
   margin: 50px;
-  background-color: var(--off-white);
-  border-radius: 10px;
   padding: 20px;
   text-align: center;
 }
@@ -458,7 +455,6 @@ table {
   padding: 20px;
   border-radius: 10px;
 }
-
 
 .dev1Picture {
   height: 250px;
