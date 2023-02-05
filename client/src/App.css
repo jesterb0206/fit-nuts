@@ -16,6 +16,10 @@
   background-color: var(--purple);
 }
 
+.navbar-toggle-icon {
+  background-color: white;
+}
+
 /* -------------------- Home Page Section -------------------- */
 
 /* Background Image & Flex Layout */
@@ -167,19 +171,26 @@
   height: 600px;
   margin-bottom: 30px;
   max-width: 1000px;
+  /* Makes the Workout Summary Cards Vertically Scrollable if There's Overflow */
+  overflow-x: hidden;
+  overflow-y: display;
   padding: 10px;
   width: 90%;
 }
 
 /* Table Styling */
 
+/* Now the Tables Won't Overflow Horizontally Outside of the Workout Summary Cards */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 .styled-table {
   border-collapse: collapse;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   font-size: 16px;
-  margin: 0 auto;
-  max-width: 600px;
-  width: 90%;
 }
 
 .styled-table thead tr {
