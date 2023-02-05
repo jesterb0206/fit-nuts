@@ -15,26 +15,7 @@ const WorkoutSummary = () => {
       <div className='workout__cards'>
         <Card
           workouts={workouts}
-        // dayOfTheWeek="Monday"
         />
-        {/* <Card
-          dayOfTheWeek="Tuesday"
-        />
-        <Card
-          dayOfTheWeek="Wednesday"
-        />
-        <Card
-          dayOfTheWeek="Thursday"
-        />
-        <Card
-          dayOfTheWeek="Friday"
-        />
-        <Card
-          dayOfTheWeek="Saturday"
-        />
-        <Card
-          dayOfTheWeek="Sunday"
-        /> */}
       </div>
     </div>
   );
