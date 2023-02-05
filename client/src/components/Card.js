@@ -6,12 +6,11 @@ const Card = ({ workouts }) => {
   if (!workouts.length) {
     return <h3>No Workouts Yet</h3>;
   }
-  console.log(workouts, "this log is after if statement on card.js")
 
   return (
-    <div className='card'>
+    <div>
       {workouts.map((workout) => (
-        <div key={workout.dayOfTheWeek}>
+        <div className='card' key={workout.dayOfTheWeek}>
           <h1 id='center__text'>{workout.dayOfTheWeek}</h1>
           <table>
             <tr>
