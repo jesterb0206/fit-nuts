@@ -209,8 +209,8 @@
   justify-content: center;
 }
 
-#workoutButton {
-  background-color: var(--midnight-blue);
+.btn-primary {
+  background-color: var(--blue-pigment);
   border: none;
   border-radius: 1000px;
   color: var(--white);
@@ -222,10 +222,18 @@
   width: 90%;
 }
 
-#workoutButton:active,
-#workoutButton:focus,
-#workoutButton:hover {
+.btn-primary:disabled {
   background-color: var(--blue-pigment);
+}
+
+.btn-primary:disabled:hover {
+  background-color: var(--blue-pigment);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--midnight-blue);
 }
 
 /* -------------------- Meet the Devs Section -------------------- */

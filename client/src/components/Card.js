@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import {Button} from 'react-bootstrap';
 import '../App.css';
 import {useQuery} from '@apollo/client';
 import {QUERY_WORKOUT} from '../utils/queries';
@@ -38,9 +39,8 @@ const Card = ({dayOfTheWeek}) => {
           </tr>
         </tbody>
       </table>
-      {/* How do we useState to change the workout button's background-color on hover */}
       <div id='centerButton'>
-        <button id='workoutButton'>Submit</button>
+        <Button variant='primary'>Submit</Button>
       </div>
     </div>
   );

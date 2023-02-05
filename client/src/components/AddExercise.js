@@ -197,12 +197,12 @@ const AddExercise = () => {
             <option value='Saturday'>Saturday</option>
           </Form.Control>
         </Form.Group>
-        <button
-          id='workoutButton'
+        <Button
           disabled={!(userFormData.exerciseName && userFormData.weight)}
+          type='primary'
         >
           Submit
-        </button>
+        </Button>
       </Form>
       {errorMessage && (
         <div>
