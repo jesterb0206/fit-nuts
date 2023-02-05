@@ -7,11 +7,19 @@ const Card = ({ workouts }) => {
     return <h3>No Workouts Yet</h3>;
   }
 
+  const groupedWorkouts = workouts.reduce((acc, workout) => {
+    if (!acc[workout.dayOfTheWeek]) {
+      acc[workout.dayOfTheWeek] = [];
+    }
+    acc[workout.dayOfTheWeek].push(workout);
+    return acc;
+  }, {});
+
   return (
     <div>
-      {workouts.map((workout) => (
-        <div className='card' key={workout.dayOfTheWeek}>
-          <h1 id='center__text'>{workout.dayOfTheWeek}</h1>
+      {Object.entries(groupedWorkouts).map(([day, workoutsForDay]) => (
+        <div className='card' key={day}>
+          <h1 id='center__text'>{day}</h1>
           <table>
             <tr>
               <th>Workout</th>
@@ -20,13 +28,15 @@ const Card = ({ workouts }) => {
               <th>Reps</th>
               <th>Notes</th>
             </tr>
-            <tr>
-              <td>{workout.exerciseName}</td>
-              <td>{workout.weight}</td>
-              <td>{workout.reps}</td>
-              <td>{workout.sets}</td>
-              <td>{workout.other}</td>
-            </tr>
+            {workoutsForDay.map((workout) => (
+              <tr key={workout.exerciseName}>
+                <td>{workout.exerciseName}</td>
+                <td>{workout.weight}</td>
+                <td>{workout.reps}</td>
+                <td>{workout.sets}</td>
+                <td>{workout.other}</td>
+              </tr>
+            ))}
           </table>
         </div>
       ))}
