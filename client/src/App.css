@@ -1,14 +1,19 @@
 /* Color Palette */
 
 :root {
-  --artichoke: #9f9772;
   --black: #000000;
-  --blue-pigment: #2b388e;
-  --light-gray: #d6d5c3;
-  --midnight-blue: #261f62;
-  --paolo-veronese-green: #009879;
-  --red-pigment: #ea2420;
+  --blue: #26687d;
+  --off-white: #c7b99a;
+  --orange: #f8962e;
+  --purple: #412454;
   --white: #ffffff;
+  --yellow: #fed346;
+}
+
+/* -------------------- NavBar Styling -------------------- */
+
+.navBarColor {
+  background-color: var(--purple);
 }
 
 /* -------------------- Home Page Section -------------------- */
@@ -29,8 +34,8 @@
 /* Welcome to Fit NUTS Header */
 
 .welcomeHeader {
-  border-bottom: 10px solid var(--black);
-  color: var(--blue-pigment);
+  border-bottom: 10px solid var(--orange);
+  color: var(--black);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -76,16 +81,16 @@
 /* Create Your Workout Session Header */
 
 .workoutHeader {
-  background-color: var(--light-gray);
+  background-color: var(--orange);
   border-radius: 20px;
-  border: 2px solid rgba(234, 36, 32, 1);
-  color: var(--blue-pigment);
+  color: var(--white);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   margin: 15px;
   padding: 10px;
+  text-align: center;
 }
 
 /* Workout Form Centering */
@@ -100,10 +105,10 @@
 
 .addExerciseForm {
   align-items: center;
-  background-color: var(--light-gray);
+  background-color: var(--off-white);
   border-radius: 20px;
-  border: 1px solid rgba(234, 36, 32, 1);
-  box-shadow: 12px 12px 2px 1px rgba(236, 36, 32, 0.75);
+  border: 1px solid var(--purple);
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -117,7 +122,7 @@
 /* Input Title Styling */
 
 .inputNameTitle {
-  color: var(--red-pigment);
+  color: var(--black);
   font-size: 25px;
 }
 
@@ -139,7 +144,7 @@
 /* An ID to Center Only Specific Elements */
 
 #center__text {
-  color: var(--blue-pigment);
+  color: var(--black);
   text-align: center;
 }
 
@@ -154,10 +159,10 @@
 /* Workout Summary Card Styling */
 
 .card {
-  background-color: var(--light-gray);
-  border: 1px solid rgba(234, 36, 32, 1);
+  background-color: var(--off-white);
+  border: 1px solid var(--purple);
   border-radius: 20px;
-  box-shadow: 12px 12px 2px 1px rgba(236, 36, 32, 0.75);
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
   cursor: pointer;
   height: 600px;
   margin-bottom: 30px;
@@ -178,7 +183,7 @@
 }
 
 .styled-table thead tr {
-  background-color: var(--paolo-veronese-green);
+  background-color: var(--orange);
   color: var(--white);
   text-align: left;
 }
@@ -193,15 +198,14 @@
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid var(--paolo-veronese-green);
+  border-bottom: 2px solid var(--purple);
 }
 
 .styled-table tbody tr.active-row {
   font-weight: bold;
-  color: var(--paolo-veronese-green);
 }
 
-/* Workout Button Styling */
+/* An ID For Centering Buttons */
 
 #centerButton {
   align-items: center;
@@ -209,8 +213,10 @@
   justify-content: center;
 }
 
+/* Workout Button Styling */
+
 .btn-primary {
-  background-color: var(--blue-pigment);
+  background-color: var(--blue);
   border: none;
   border-radius: 1000px;
   color: var(--white);
@@ -222,18 +228,24 @@
   width: 90%;
 }
 
-.btn-primary:disabled {
-  background-color: var(--blue-pigment);
-}
+/* Button Pseudo Class Styling */
 
-.btn-primary:disabled:hover {
-  background-color: var(--blue-pigment);
-}
-
-.btn-primary:hover,
+.btn-primary:active,
 .btn-primary:focus,
-.btn-primary:active {
-  background-color: var(--midnight-blue);
+.btn-primary:hover {
+  background-color: var(--purple);
+}
+
+/* Disabled Button Styling */
+
+.btn-primary:disabled {
+  background-color: var(--blue);
+}
+
+.btn-primary:disabled:active,
+.btn-primary:disabled:focus,
+.btn-primary:disabled:hover {
+  background-color: var(--blue);
 }
 
 /* -------------------- Meet the Devs Section -------------------- */
