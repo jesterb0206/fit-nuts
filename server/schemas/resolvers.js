@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Workout } = require('../models');
-const { signToken }= require('../utils/auth')
+const { signToken } = require('../utils/auth')
 
 
 const resolvers = {
@@ -21,6 +21,14 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+
+        workouts: async () => {
+            return Workout.find();
+        },
+
+        workouts: async () => {
+            return Workout.find();
+        },
     },
 
     Mutation: {
@@ -28,22 +36,22 @@ const resolvers = {
             const user = await User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
-          },
-          login: async (parent, { email, password }) => {
+        },
+        login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
-      
+
             if (!user) {
-              throw new AuthenticationError('No user found with this email address');
+                throw new AuthenticationError('No user found with this email address');
             }
-      
+
             const correctPw = await user.isCorrectPassword(password);
-      
+
             if (!correctPw) {
-              throw new AuthenticationError('Incorrect credentials');
+                throw new AuthenticationError('Incorrect credentials');
             }
-      
+
             const token = signToken(user);
-      
+
             return { token, user };
           },
         addExercise: async(parent, { dayOfTheWeek, exerciseName, weight, sets, reps, other }, context) => {
@@ -52,12 +60,12 @@ const resolvers = {
             {
             const workout = await Workout.create({ dayOfTheWeek, exerciseName, weight, sets, reps, other });
 
-            await User.findOneAndUpdate(
-                {_id: context.user._id},
-                { $addToSet: { workouts: workout._id }}
-            )
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { workouts: workout._id } }
+                )
 
-            return workout;
+                return workout;
             }
             throw new AuthenticationError('You need to be logged in!');
         },
@@ -100,24 +108,24 @@ const resolvers = {
                 )
             }
         },
-        updateWorkoutDay: async(parent, { dayOfTheWeek }, context) => {
+        updateWorkoutDay: async (parent, { dayOfTheWeek }, context) => {
 
-            if(context.user) {
+            if (context.user) {
                 await Workout.findOneAndDelete(
-                    {dayOfTheWeek: dayOfTheWeek}
+                    { dayOfTheWeek: dayOfTheWeek }
                 )
                 await User.findOneAndUpdate(
-                    {workout_id: workout_id}
+                    { workout_id: workout_id }
                 )
                 const workout = await Workout.create({ dayOfTheWeek, exerciseName, weight, sets, reps, other });
 
-                    await User.findOneAndUpdate(
-                        {_id: context.user._id},
-                        { $addToSet: { workouts: workout._id }}
-                    )
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { workouts: workout._id } }
+                )
 
-                    return workout;
-                                
+                return workout;
+
             }
         }
     }

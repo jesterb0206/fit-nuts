@@ -1,50 +1,47 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
 import '../App.css';
-import {useQuery} from '@apollo/client';
-import {QUERY_WORKOUT} from '../utils/queries';
 
-const Card = ({dayOfTheWeek}) => {
-  const {loading, data} = useQuery(QUERY_WORKOUT, {
-    variables: {dayOfTheWeek},
-  });
 
-  const workouts = data?.workout || [];
+const Card = ({ workouts }) => {
 
-  // Returns Workout Summary Card Content
+  if (!workouts.length) {
+    return <h3>No Workouts Yet</h3>;
+  }
+
+  const groupedWorkouts = workouts.reduce((acc, workout) => {
+    if (!acc[workout.dayOfTheWeek]) {
+      acc[workout.dayOfTheWeek] = [];
+    }
+    acc[workout.dayOfTheWeek].push(workout);
+    return acc;
+  }, {});
 
   return (
-    <div className='card example'>
-      <h1 id='center__text'>{dayOfTheWeek}</h1>
-      {/* Workout Summary Table */}
-      <table class='styled-table'>
-        <thead>
-          <tr>
-            <th>Workout</th>
-            <th>Weight</th>
-            <th>Sets</th>
-            <th>Reps</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Barbell back squat</td>
-            <td>141 lb</td>
-            <td>5</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>Dumbbell Lateral Raise</td>
-            <td>34 lb</td>
-            <td>2</td>
-            <td>8</td>
-          </tr>
-        </tbody>
-      </table>
-      {/* Add / Update Workout Button */}
-      <div id='centerButton'>
-        <Button variant='primary'>Add / Update Workout</Button>
-      </div>
+    <div>
+      {Object.entries(groupedWorkouts).map(([day, workoutsForDay]) => (
+        <div className='card' key={day}>
+          <h1 id='center__text'>{day}</h1>
+          <table>
+            <tr>
+              <th>Workout</th>
+              <th>Weight</th>
+              <th>Sets</th>
+              <th>Reps</th>
+              <th>Notes</th>
+            </tr>
+            {workoutsForDay.map((workout) => (
+              <tr key={workout.exerciseName}>
+                <td>{workout.exerciseName}</td>
+                <td>{workout.weight}</td>
+                <td>{workout.reps}</td>
+                <td>{workout.sets}</td>
+                <td>{workout.other}</td>
+              </tr>
+            ))}
+          </table>
+        </div>
+      ))}
+      {/* <button>Add/Change Workout</button> */}
     </div>
   );
 };

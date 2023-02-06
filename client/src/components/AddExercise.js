@@ -25,8 +25,8 @@ const AddExercise = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
-    const {name, value} = event.target;
-    setUserFormData({...userFormData, [name]: value});
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
   const handleFormSubmit = async (event) => {
@@ -56,7 +56,7 @@ const AddExercise = () => {
 
     try {
 
-      const {data} = await addExercise({
+      const { data } = await addExercise({
         variables: {
           ...userFormData,
           reps: parseInt(userFormData.reps),
@@ -180,11 +180,11 @@ const AddExercise = () => {
 
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='other'>
-            Other
+            Notes
           </Form.Label>
           <Form.Control
             type='string'
-            placeholder='Other'
+            placeholder='Notes'
             name='other'
             onChange={handleInputChange}
             value={userFormData.other}
