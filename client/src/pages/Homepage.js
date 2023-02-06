@@ -1,26 +1,27 @@
-/* Mainpage with login, we can have a separate login page if wanted before this homepage
-
-Once logged in, this will be the summary page with the accounts and calendars for high level workout overview*/
-
-
-
 import {React} from 'react';
-// import style from '../../src/App.css'
 
+// A Function That Renders The Home Page Body Content
 
 const Homepage = () => {
-
-
-    return(
-        <div className='homepageSection'>
-            <h1 className='welcomeHeader'>Welcome To Fit NUTS!</h1>
-            <p className='introParagraph'>ᴛʜɪꜱ ᴡᴇʙ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ꜰᴏʀ ᴛʜᴇ ᴍᴏᴅᴇʀɴ ᴅᴀʏ ꜰɪᴛɴᴇꜱꜱ ɴᴜᴛ! ʜᴇʀᴇ ʏᴏᴜ ᴡɪʟʟ ʙᴇ ᴀʙʟᴇ ᴛᴏ ꜱᴀᴠᴇ ᴀʟʟ ᴏꜰ ʏᴏᴜʀ ᴇᴠᴇʀʏ ᴅᴀʏ ᴇxᴇʀᴄɪꜱᴇꜱ, ᴡᴏʀᴋᴏᴜᴛꜱ, ʀᴇᴘꜱ, ꜱᴇᴛꜱ, ᴇᴛᴄ. ᴀʟʟ ʏᴏᴜ ʜᴀᴠᴇ ᴛᴏ ᴅᴏ ɪꜱ ꜱɪɢɴ ɪɴ ᴏʀ ᴄʀᴇᴀᴛᴇ ᴀɴ ᴀᴄᴄᴏᴜɴᴛ ᴀɴᴅ ɢᴇᴛ ᴛᴏ ᴘᴜᴍᴘɪɴɢ ꜱᴏᴍᴇ ɪʀᴏɴ . . . ᴏʀ ᴡʜᴀᴛᴇᴠᴇʀ ɪᴛ ɪꜱ ᴛʜᴀᴛ ʏᴏᴜ ᴅᴏ. . . ᴏɴᴄᴇ ʏᴏᴜ'ʀᴇ ꜱɪɢɴᴇᴅ ɪɴ, ʏᴏᴜ ᴄᴀɴ ꜱᴛᴀʀᴛ ᴄʀᴇᴀᴛɪɴɢ ᴡᴏʀᴋᴏᴜᴛꜱ ʙᴇ ꜱᴇʟᴇᴄᴛɪɴɢ ᴛʜᴇ "ᴄʀᴇᴀᴛᴇ ᴡᴏʀᴋᴏᴜᴛ" ʙᴜᴛᴛᴏɴꜱ ɪɴ ᴛʜᴇ ɴᴀᴠɪɢᴀᴛɪᴏɴ ʙᴀʀ5 ᴏɴ ᴛᴏᴘ. ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ʟᴏᴏᴋ ᴜᴘ ʏᴏᴜʀ ᴏʟᴅ ᴡᴏʀᴋᴏᴜᴛꜱ ʙʏ ꜱᴇʟᴇᴄᴛɪɴɢ ᴛʜᴇ "ᴘᴀꜱᴛ ᴡᴏʀᴋᴏᴜᴛꜱ" ʙᴜᴛᴛᴏɴ ᴛᴏ ꜱᴇᴇ ᴡʜᴀᴛ ʏᴏᴜ ʟᴀꜱᴛ ᴘʀ (ᴘᴇʀꜱᴏɴᴀʟ ʀᴇᴄᴏʀᴅ) ᴡᴀꜱ ᴛʜᴇ ʟᴀꜱᴛ ᴛɪᴍᴇ. ᴀɴʏᴡᴀʏꜱ, ʟᴇᴛꜱ ɢᴇᴛ ᴛᴏ ᴇxᴇʀᴄɪꜱɪɴɢ! ɪ'ʟʟ ꜱᴇᴇ ʏᴏᴜ ɪɴ ᴛʜᴇ ɢʏᴍ!</p>
-        </div>
-    )
-}
+  return (
+    // A Container To Center The Homepage Content
+    <div className='homepageSection'>
+      {/* Fit NUTS Header */}
+      <h1 className='welcomeHeader'>Welcome To Fit NUTS! 🏋️‍♀️🥜🏋️‍♂️</h1>
+      {/* Fit NUTS Blurb */}
+      <p className='introParagraph'>
+        This web application is for the modern day fitness nut! Here you'll be
+        able to save all your daily exercises, workouts, reps, sets, etc. All
+        you have to do is sign in or create an account and get to pumping some
+        iron. Once you’re signed in, you can start creating workouts by
+        selecting the “create workout” button in the navigation bar. You can
+        then view your past workouts by selecting the “workout summary” button.
+        This is also where you can find your last PR (Personal Record). Our goal
+        is to help you keep track of your progress and motivate you to beat your
+        personal best. I’ll see you at the gym and let’s get to exercising!
+      </p>
+    </div>
+  );
+};
 
 export default Homepage;
-
-
-
-

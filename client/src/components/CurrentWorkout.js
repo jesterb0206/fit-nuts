@@ -10,8 +10,7 @@ import DeleteButton from './DeleteButton';
 import SetButtons from './SetButtons';
 import RepButtons from './RepButtons';
 
-const CurrentWorkout = ({ data, loading, refetch}) => {
-
+const CurrentWorkout = ({data, loading, refetch}) => {
   function handleSetButtonClick() {
     refetch();
   }
@@ -30,26 +29,46 @@ const CurrentWorkout = ({ data, loading, refetch}) => {
 
   return (
     <>
-      <Container>
-        <CardColumns>
-          {data?.workout?.map((exercise) => {
-            return (
-              <Card key={exercise._id} border='dark'>
-                <Card.Body>
-                  <Card.Title>{exercise.exerciseName}</Card.Title>
-                  <p className='small'>Weight: {exercise.weight}</p>
-                  <Card.Text>{exercise.sets}</Card.Text>
-                  <Card.Text>{exercise.reps}</Card.Text>
-                  <Card.Text>{exercise.other}</Card.Text>
-                  < SetButtons _id = { exercise._id } sets = { exercise.sets } onButtonClick={ handleSetButtonClick }/>
-                  < RepButtons _id =  {exercise._id} reps = {exercise.reps}  onButtonClick={ handleRepButtonClick } />
-                  <DeleteButton _id= { exercise._id } onButtonClick = { handleDeleteButtonClick }/>
-                </Card.Body>
-              </Card>
-            );
-          })}
-        </CardColumns>
-      </Container>
+      {data?.workout?.map((exercise) => {
+        return (
+          <div className='card example'>
+            <table className='styled-table'>
+              <thead>
+                <tr>
+                  <th>Workout</th>
+                  <th>Weight</th>
+                  <th>Sets</th>
+                  <th>Reps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{exercise.exerciseName}</td>
+                  <td>Weight: {exercise.weight}</td>
+                  <td>{exercise.sets}</td>
+                  <td>{exercise.reps}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id='centerButton'>
+              <SetButtons
+                _id={exercise._id}
+                sets={exercise.sets}
+                onButtonClick={handleSetButtonClick}
+              />
+              <RepButtons
+                _id={exercise._id}
+                reps={exercise.reps}
+                onButtonClick={handleRepButtonClick}
+              />
+              <DeleteButton
+                _id={exercise._id}
+                onButtonClick={handleDeleteButtonClick}
+              />
+            </div>
+          </div>
+        );
+      })}
     </>
   );
 };
