@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {Button} from 'react-bootstrap';
 import '../App.css';
 
 const Card = ({workouts}) => {
@@ -48,10 +47,6 @@ const Card = ({workouts}) => {
           </table>
         </div>
       ))}
-      {/* Add / Update Workout Button */}
-      {/*       <div id='centerButton'>
-        <Button variant='primary'>Add / Update Workout</Button>
-      </div> */}
     </div>
   );
 };
