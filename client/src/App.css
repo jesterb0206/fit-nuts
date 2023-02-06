@@ -407,149 +407,137 @@ table {
 /* About Us Container */
 
 .aboutUsSection {
-  align-items: center;
-  background-image: url('./images/gym.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-height: 100vh;
+  flex-direction: column;
+  margin: auto;
+  max-width: 768px;
+  width: 80%;
 }
 
 /* Meet the Developers Header */
 
 .aboutHeader {
-  align-items: center;
-  color: var(--orange);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 0 7px var(--purple), 0 0 10px var(--purple),
-    0 0 21px var(--purple), 0 0 42px var(--purple), 0 0 82px var(--purple),
-    0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 150px var(--purple);
+  background-color: var(--orange);
+  border-radius: 20px;
+  color: var(--white);
+  font-size: 40px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  text-align: center;
 }
 
 /* About Us Blurb */
 
 .aboutParagraph {
-  align-items: center;
-  /* background-color: var(--off-white); */
-  border-radius: 10px;
-  color: var(--orange);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-size: 25px;
-  justify-content: center;
-  margin: 50px;
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
-  backdrop-filter: blur(75px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--off-white);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
+  color: var(--black);
+  font-size: 20px;
+  margin: auto;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  text-align: center;
+  width: 87.5%;
+}
+
+/* Change Font Size of Meet the Developers Header & Blurb On Mobile Devices */
+
+@media screen and (max-width: 480px) {
+  .aboutHeader {
+    font-size: 30px;
+  }
+
+  .aboutParagraph {
+    font-size: 15px;
+  }
 }
 
 .linksSection {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  display: -ms-inline-grid;
+  max-width: 768px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
 }
 
-#devBoxes {
-  background-color: var(--orange);
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
+/* Meet the Devs Card Styling */
+
+.devCards {
+  background-color: var(--off-white);
+  border-radius: 20px;
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
+  color: var(--black);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  border-radius: 5px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
-  backdrop-filter: blur(75px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  color: var(--orange);
   font-size: 20px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  max-width: 480px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  text-align: center;
+  width: 75%;
 }
 
-.dev1Picture {
-  height: 250px;
-  margin: 10px;
-}
-.dev1Picture:hover {
-  box-shadow: 10px #000000;
-  transition: all 1 ease-in-out;
-  transform: scale(1.1);
-  outline: 5px transparent black;
+/* Name Styling */
+
+#name {
+  background-color: var(--orange);
+  border-radius: 20px;
+  color: var(--white);
+  font-size: 27px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  text-align: center;
 }
 
-.dev2Picture {
+/* Portrait Styling */
+
+.devPicture {
   height: 250px;
-  margin: 10px;
-}
-.dev2Picture:hover {
-  box-shadow: 10px #000000;
-  transition: all 1 ease-in-out;
-  transform: scale(1.1);
-  outline: 5px transparent black;
+  margin-top: 12px;
 }
 
-.dev3Picture {
-  height: 250px;
-  margin: 10px;
-}
-.dev3Picture:hover {
-  box-shadow: 10px #000000;
+.devPicture:hover {
+  box-shadow: 10px var(--black);
   transition: all 1 ease-in-out;
-  transform: scale(1.1);
-  outline: 5px transparent black;
+  transform: scale(1.05);
+  outline: 5px transparent var(--black);
 }
 
-.dev4Picture {
-  height: 250px;
-  margin: 10px;
-}
-.dev4Picture:hover {
-  box-shadow: 10px #000000;
-  transition: all 1 ease-in-out;
-  transform: scale(1.1);
-  outline: 5px transparent black;
-}
+/* GitHub Anchor Link Styling */
 
 #githubLinks {
-  background-color: var(--purple);
-  border-radius: 5px;
-  padding: 10px;
-  margin: 15px;
-  color: var(--orange);
+  background-color: var(--blue);
+  border: none;
+  border-radius: 1000px;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  left: 50%;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  max-width: 400px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  position: relative;
+  transform: translateX(-50%);
+  width: 90%;
 }
+
+#githubLinks:active,
+#githubLinks:focus,
 #githubLinks:hover {
-  box-shadow: 10px #000000;
-  transition: all 1 ease-in-out;
-  transform: scale(1.1);
-  outline: 5px transparent black;
+  background-color: var(--purple);
+  text-decoration: none;
 }
