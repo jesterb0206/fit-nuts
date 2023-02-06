@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
-import {Form, Button, Alert} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 import {useMutation, useQuery} from '@apollo/client';
 import {ADD_EXERCISE} from '../utils/mutations';
 import {QUERY_WORKOUT} from '../utils/queries';
 import CurrentWorkout from './CurrentWorkout';
 import Auth from '../utils/auth';
-
-
 
 const AddExercise = () => {
   const [userFormData, setUserFormData] = useState({
@@ -68,7 +65,6 @@ const AddExercise = () => {
         },
       });
 
-
     } catch (err) {
       console.error(err);
     }
@@ -84,8 +80,6 @@ const AddExercise = () => {
     refetch();
   };
 
-  // Returns the Create Your Workout Session Form
-
   return (
     <>
       <CurrentWorkout
@@ -98,8 +92,7 @@ const AddExercise = () => {
       />
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
 
-        
-      <Form.Group controlId='formBasicSelect'>
+        <Form.Group controlId='formBasicSelect'>
           <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
           <Form.Control
             as='select'
@@ -119,7 +112,6 @@ const AddExercise = () => {
           </Form.Control>
         </Form.Group>
 
-
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='name'>
             Name - required
@@ -136,6 +128,7 @@ const AddExercise = () => {
             An exercise's name is required!
           </Form.Control.Feedback>
         </Form.Group>
+
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='weight'>
             Weight
@@ -152,6 +145,7 @@ const AddExercise = () => {
             Weight is a required field!
           </Form.Control.Feedback>
         </Form.Group>
+
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='sets'>
             Sets
@@ -167,6 +161,7 @@ const AddExercise = () => {
             A valid number of sets is required!
           </Form.Control.Feedback>
         </Form.Group>
+
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='reps'>
             Reps
@@ -182,6 +177,7 @@ const AddExercise = () => {
             A valid number of reps is required!
           </Form.Control.Feedback>
         </Form.Group>
+
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='other'>
             Other
@@ -197,6 +193,7 @@ const AddExercise = () => {
             Invalid response!
           </Form.Control.Feedback>
         </Form.Group>
+
         <Button
           disabled={!(userFormData.exerciseName && userFormData.weight)}
           type='primary'
@@ -204,11 +201,13 @@ const AddExercise = () => {
           Submit
         </Button>
       </Form>
+
       {errorMessage && (
         <div>
           <p className='error-text'>{errorMessage}</p>
         </div>
       )}
+      
     </>
   );
 };
