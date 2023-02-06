@@ -6,34 +6,27 @@ import {QUERY_ME} from '../utils/queries';
 import {QUERY_WORKOUT} from '../utils/queries';
 import {useMutation, useQuery} from '@apollo/client';
 import Auth from '../utils/auth';
+import DeleteButton from './DeleteButton';
+import SetButtons from './SetButtons';
+import RepButtons from './RepButtons';
 
-const CurrentWorkout = ({dayOfTheWeek,setUserFormData }) => {
+const CurrentWorkout = ({ data, loading, refetch}) => {
 
+  function handleSetButtonClick() {
+    refetch();
+  }
 
-  const {loading, data} = useQuery(QUERY_WORKOUT, {
-    variables: { dayOfTheWeek },
-  });
+  function handleRepButtonClick() {
+    refetch();
+  }
 
-  const userData = data?.me || {};
-  console.log(data);
-  console.log(userData);
-
-  const [extraSets, setExtraSets] = useState(0);
-  // on save button, pass through
+  function handleDeleteButtonClick() {
+    refetch();
+  }
 
   if (loading) {
     return <h2>LOADING...</h2>;
   }
-
-  const increaseSet = async (currentSets) => {
-    setExtraSets(extraSets + 1);
-  };
-
-  const decreaseSet = async (workoutId) => {};
-
-  const increaseReps = async (workoutId) => {};
-
-  const decreaseReps = async (workoutId) => {};
 
   return (
     <>
@@ -45,33 +38,12 @@ const CurrentWorkout = ({dayOfTheWeek,setUserFormData }) => {
                 <Card.Body>
                   <Card.Title>{exercise.exerciseName}</Card.Title>
                   <p className='small'>Weight: {exercise.weight}</p>
-                  <Card.Text>{exercise.sets + extraSets}</Card.Text>
+                  <Card.Text>{exercise.sets}</Card.Text>
                   <Card.Text>{exercise.reps}</Card.Text>
                   <Card.Text>{exercise.other}</Card.Text>
-                  <Button
-                    className='btn-block btn-danger'
-                    onClick={() => increaseSet(exercise.sets)}
-                  >
-                    Increase Set
-                  </Button>
-                  <Button
-                    className='btn-block btn-danger'
-                    onClick={() => decreaseSet(exercise.sets)}
-                  >
-                    Decrease Set
-                  </Button>
-                  <Button
-                    className='btn-block btn-danger'
-                    onClick={() => increaseReps(exercise.reps)}
-                  >
-                    Increase Reps
-                  </Button>
-                  <Button
-                    className='btn-block btn-danger'
-                    onClick={() => decreaseReps(exercise.reps)}
-                  >
-                    Decrease reps
-                  </Button>
+                  < SetButtons _id = { exercise._id } sets = { exercise.sets } onButtonClick={ handleSetButtonClick }/>
+                  < RepButtons _id =  {exercise._id} reps = {exercise.reps}  onButtonClick={ handleRepButtonClick } />
+                  <DeleteButton _id= { exercise._id } onButtonClick = { handleDeleteButtonClick }/>
                 </Card.Body>
               </Card>
             );

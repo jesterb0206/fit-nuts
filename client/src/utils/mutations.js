@@ -54,20 +54,22 @@ export const ADD_EXERCISE = gql`
 
 export const UPDATE_SET = gql`
     mutation updateSets(
+        $_id: ID!,
         $sets: Int
     ) {
-        updateSets( sets: $sets) {
-            set
+        updateSets( _id: $_id, sets: $sets) {
+            sets
         }
     }`
 
 
 export const UPDATE_REPS = gql`
     mutation updateReps(
+        $_id: ID!,
         $reps: Int
     ) {
-        updateReps( reps: $reps) {
-            set
+        updateReps( _id: $_id, reps: $reps) {
+            reps
         }
     }
 `
@@ -80,7 +82,7 @@ export const SUMMARY_PAGE = gql`
       workout{
         dayOfTheWeek
         exerciseName
-        workoutId
+        _id
         weight
         sets
         reps
@@ -118,3 +120,21 @@ export const UPDATE_WORKOUT = gql`
       }
 `
 
+export const DELETE_WORKOUT = gql`
+  mutation deleteWorkout(
+        $_id: ID!
+    )  {
+      deleteWorkout(
+        _id: $_id,
+        )
+        {
+          _id
+          dayOfTheWeek
+          exerciseName
+          weight
+          sets
+          reps
+          other
+        }
+      }
+`

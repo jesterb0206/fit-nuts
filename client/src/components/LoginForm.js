@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
-// see SignupForm.js for comments
 import React, {useState} from 'react';
 import {Form, Button, Alert} from 'react-bootstrap';
 import {useMutation} from '@apollo/client';
-
 import Auth from '../utils/auth';
 import {LOGIN_USER} from '../utils/mutations';
 
@@ -21,7 +19,8 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
+    // Checks to See if the User Inputted Everything Correctly (as per the React Bootstrap documentation)
+
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -45,6 +44,8 @@ const LoginForm = () => {
       password: '',
     });
   };
+
+  // Returns the Log In Form
 
   return (
     <>
@@ -71,7 +72,6 @@ const LoginForm = () => {
             Email is required!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label htmlFor='password'>Password</Form.Label>
           <Form.Control
@@ -86,13 +86,15 @@ const LoginForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
-        <Button
-          disabled={!(userFormData.email && userFormData.password)}
-          type='submit'
-          variant='success'
-        >
-          Submit
-        </Button>
+        <div id='centerButton'>
+          <Button
+            disabled={!(userFormData.email && userFormData.password)}
+            type='submit'
+            variant='submit'
+          >
+            Submit
+          </Button>
+        </div>
       </Form>
     </>
   );

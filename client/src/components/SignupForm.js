@@ -6,15 +6,20 @@ import Auth from '../utils/auth';
 import {ADD_USER} from '../utils/mutations';
 
 const SignupForm = () => {
-  // set initial form state
+  // Set Initial Form State
+
   const [userFormData, setUserFormData] = useState({
     username: '',
     email: '',
     password: '',
   });
-  // set state for form validation
+
+  // Set State for Form Validation
+
   const [validated] = useState(false);
-  // set state for alert
+
+  // Set State for Alert
+
   const [showAlert, setShowAlert] = useState(false);
 
   const [addUser, {error}] = useMutation(ADD_USER);
@@ -27,7 +32,8 @@ const SignupForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
+    // Checks to See if the User Inputted Everything Correctly (as per the React Bootstrap documentation)
+
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -52,11 +58,15 @@ const SignupForm = () => {
     });
   };
 
+  // Returns the Sign Up Form
+
   return (
     <>
-      {/* This is needed for the validation functionality above */}
+      {/* This Is Needed for the Validation Functionality Above */}
+
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-        {/* show alert if server response is bad */}
+        {/* Show Alert if Server Response Is Bad */}
+
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -65,7 +75,6 @@ const SignupForm = () => {
         >
           Something went wrong with your signup!
         </Alert>
-
         <Form.Group>
           <Form.Label htmlFor='username'>Username</Form.Label>
           <Form.Control
@@ -80,7 +89,6 @@ const SignupForm = () => {
             Username is required!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label htmlFor='email'>Email</Form.Label>
           <Form.Control
@@ -95,7 +103,6 @@ const SignupForm = () => {
             Email is required!
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group>
           <Form.Label htmlFor='password'>Password</Form.Label>
           <Form.Control
@@ -110,19 +117,21 @@ const SignupForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
-        <Button
-          disabled={
-            !(
-              userFormData.username &&
-              userFormData.email &&
-              userFormData.password
-            )
-          }
-          type='submit'
-          variant='success'
-        >
-          Submit
-        </Button>
+        <div id='centerButton'>
+          <Button
+            disabled={
+              !(
+                userFormData.username &&
+                userFormData.email &&
+                userFormData.password
+              )
+            }
+            type='submit'
+            variant='submit'
+          >
+            Submit
+          </Button>
+        </div>
       </Form>
     </>
   );
