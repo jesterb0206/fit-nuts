@@ -10,12 +10,7 @@ import DeleteButton from './DeleteButton';
 import SetButtons from './SetButtons';
 import RepButtons from './RepButtons';
 
-const CurrentWorkout = ({dayOfTheWeek}) => {
-
-  const {loading, data, refetch} = useQuery(QUERY_WORKOUT, {
-    variables: { dayOfTheWeek },
-  });
-  
+const CurrentWorkout = ({ data, loading, refetch}) => {
 
   function handleSetButtonClick() {
     refetch();
@@ -28,8 +23,6 @@ const CurrentWorkout = ({dayOfTheWeek}) => {
   function handleDeleteButtonClick() {
     refetch();
   }
-
-  const userData = data?.me || {};
 
   if (loading) {
     return <h2>LOADING...</h2>;

@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import {Form, Button, Alert} from 'react-bootstrap';
-import {useMutation} from '@apollo/client';
+import {useMutation, useQuery} from '@apollo/client';
 import {ADD_EXERCISE} from '../utils/mutations';
-import Auth from '../utils/auth';
+import {QUERY_WORKOUT} from '../utils/queries';
 import CurrentWorkout from './CurrentWorkout';
+import Auth from '../utils/auth';
+
+
 
 const AddExercise = () => {
   const [userFormData, setUserFormData] = useState({
@@ -15,10 +18,13 @@ const AddExercise = () => {
     reps: '0',
     other: '',
   });
-  
-  const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
 
   const [addExercise] = useMutation(ADD_EXERCISE);
+  
+  const {loading, data, refetch} = useQuery(QUERY_WORKOUT, {
+    variables: { dayOfTheWeek : userFormData.dayOfTheWeek },
+  });
+
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
@@ -68,12 +74,14 @@ const AddExercise = () => {
     }
 
     setUserFormData({
+      dayOfTheWeek: userFormData.dayOfTheWeek,
       exerciseName: '',
       weight: '',
       sets: '0',
       reps: '0',
       other: '',
     });
+    refetch();
   };
 
   // Returns the Create Your Workout Session Form
@@ -84,6 +92,9 @@ const AddExercise = () => {
         className='currentWorkout'
         dayOfTheWeek={userFormData.dayOfTheWeek}
         setUserFormData={setUserFormData}
+        refetch = {refetch}
+        loading = {loading}
+        data = {data}
       />
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
 
