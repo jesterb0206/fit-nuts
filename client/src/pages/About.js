@@ -6,7 +6,7 @@ import {React} from 'react';
 import eddieSelfie from '../images/Fig-Selfie.jpg';
 import samAvatar from '../images/southParkAvatar.png';
 import patSelfie from '../images/patSelfie.jpg';
-import thairAvatar from '../images/blankAvatar.png';
+import thairAvatar from '../images/Thair.png';
 // The File Was Displaying As A Text File On My End So I Deleted It
 // import bradSelfie from '../images/bradSelfie.jif';
 
@@ -104,7 +104,7 @@ const AboutUs = () => {
           Thair Ibadi
           {/* TODO: */}
           {/* need to add portfolio website link below  */}
-          <a href='' target='_blank'>
+          <a href='https://thair-i.github.io/My-Portfolio/' target='_blank'>
             <img
               className='dev4Picture'
               id='profilePicture'
