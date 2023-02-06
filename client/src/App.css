@@ -430,9 +430,9 @@ table {
 
 .aboutParagraph {
   align-items: center;
-  background-color: var(--off-white);
+  /* background-color: var(--off-white); */
   border-radius: 10px;
-  color: rgb(1, 1, 1);
+  color: var(--orange);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -441,6 +441,13 @@ table {
   margin: 50px;
   padding: 20px;
   text-align: center;
+  border-radius: 5px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(75px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .linksSection {
@@ -453,7 +460,7 @@ table {
 }
 
 #devBoxes {
-  background-color: var(--off-white);
+  background-color: var(--orange);
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -462,27 +469,64 @@ table {
   align-items: center;
   justify-content: center;
   margin: 10px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(75px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: var(--orange);
+  font-size: 20px;
 }
 
 .dev1Picture {
   height: 250px;
   margin: 10px;
 }
+.dev1Picture:hover {
+  box-shadow: 10px #000000;
+  transition: all 1 ease-in-out;
+  transform: scale(1.1);
+  outline:  5px transparent black;
+}
+
 
 .dev2Picture {
   height: 250px;
   margin: 10px;
 }
+.dev2Picture:hover {
+  box-shadow: 10px #000000;
+  transition: all 1 ease-in-out;
+  transform: scale(1.1);
+  outline:  5px transparent black;
+}
+
 
 .dev3Picture {
   height: 250px;
   margin: 10px;
 }
+.dev3Picture:hover {
+  box-shadow: 10px #000000;
+  transition: all 1 ease-in-out;
+  transform: scale(1.1);
+  outline:  5px transparent black;
+}
+
 
 .dev4Picture {
   height: 250px;
   margin: 10px;
 }
+.dev4Picture:hover {
+  box-shadow: 10px #000000;
+  transition: all 1 ease-in-out;
+  transform: scale(1.1);
+  outline:  5px transparent black;
+}
+
 
 #githubLinks {
   background-color: var(--purple);
@@ -491,5 +535,10 @@ table {
   margin: 15px;
   color: var(--orange);
 }
+#githubLinks:hover {
+  box-shadow: 10px #000000;
+  transition: all 1 ease-in-out;
+  transform: scale(1.1);
+  outline:  5px transparent black;
+}
 
-/* test comments for push  */
