@@ -1,8 +1,7 @@
-import React from 'react';
-import React, { useEffect } from 'react';
 import Card from '.././components/Card';
 import { useQuery } from '@apollo/client';
 import { QUERY_WORKOUTS } from '../utils/queries';
+import React, { useEffect } from 'react';
 
 
 const WorkoutSummary = () => {
