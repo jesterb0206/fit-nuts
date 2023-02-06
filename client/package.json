@@ -15,7 +15,12 @@
     "react-bootstrap": "^1.6.6",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.1"
+    "react-scripts": "4.0.1",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
