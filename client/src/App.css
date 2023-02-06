@@ -139,47 +139,54 @@ select:-webkit-autofill:focus {
 /* Background Image & Flex Layout */
 
 .homepageSection {
-  /* background-image: url('../src/images/workout-1.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  max-width: 768px;
+  width: 80%;
 }
 
 /* Welcome to Fit NUTS Header */
 
 .welcomeHeader {
-  border-bottom: 10px solid var(--purple);
-  color: var(--orange);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px;
-  padding: 10px;
+  background-color: var(--orange);
+  border-radius: 20px;
+  color: var(--white);
+  font-size: 40px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  padding-bottom: 12px;
+  padding-top: 12px;
   text-align: center;
 }
 
 /* Fit Nuts Blurb */
 
 .introParagraph {
-  border: 10px;
-  /* box-shadow: 2px 0px 5px #999; */
+  background-color: var(--off-white);
+  border-radius: 20px;
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
   color: var(--black);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-size: 25px;
-  justify-content: center;
-  margin: 20px;
-  min-height: 100vh;
-  padding: 20px;
+  font-size: 20px;
+  margin: auto;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
   text-align: center;
-  color: var(--orange);
-  /* background-color: #412454; */
+  width: 75%;
+}
+
+/* Change Font Size of Fit NUTS Header & Blurb On Mobile Devices */
+
+@media screen and (max-width: 480px) {
+  .welcomeHeader {
+    font-size: 30px;
+  }
+
+  .introParagraph {
+    font-size: 15px;
+  }
 }
 
 /* -------------------- Create Workout Section -------------------- */
@@ -422,8 +429,9 @@ table {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 0 7px var(--purple), 0 0 10px var(--purple), 0 0 21px var(--purple), 0 0 42px var(--purple),
-    0 0 82px var(--purple), 0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 150px var(--purple);
+  text-shadow: 0 0 7px var(--purple), 0 0 10px var(--purple),
+    0 0 21px var(--purple), 0 0 42px var(--purple), 0 0 82px var(--purple),
+    0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 150px var(--purple);
 }
 
 /* About Us Blurb */
@@ -442,11 +450,15 @@ table {
   padding: 20px;
   text-align: center;
   border-radius: 5px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(75px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border:1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
@@ -470,11 +482,15 @@ table {
   justify-content: center;
   margin: 10px;
   border-radius: 5px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(75px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border:1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   color: var(--orange);
   font-size: 20px;
@@ -488,9 +504,8 @@ table {
   box-shadow: 10px #000000;
   transition: all 1 ease-in-out;
   transform: scale(1.1);
-  outline:  5px transparent black;
+  outline: 5px transparent black;
 }
-
 
 .dev2Picture {
   height: 250px;
@@ -500,9 +515,8 @@ table {
   box-shadow: 10px #000000;
   transition: all 1 ease-in-out;
   transform: scale(1.1);
-  outline:  5px transparent black;
+  outline: 5px transparent black;
 }
-
 
 .dev3Picture {
   height: 250px;
@@ -512,9 +526,8 @@ table {
   box-shadow: 10px #000000;
   transition: all 1 ease-in-out;
   transform: scale(1.1);
-  outline:  5px transparent black;
+  outline: 5px transparent black;
 }
-
 
 .dev4Picture {
   height: 250px;
@@ -524,9 +537,8 @@ table {
   box-shadow: 10px #000000;
   transition: all 1 ease-in-out;
   transform: scale(1.1);
-  outline:  5px transparent black;
+  outline: 5px transparent black;
 }
-
 
 #githubLinks {
   background-color: var(--purple);
@@ -539,6 +551,5 @@ table {
   box-shadow: 10px #000000;
   transition: all 1 ease-in-out;
   transform: scale(1.1);
-  outline:  5px transparent black;
+  outline: 5px transparent black;
 }
-
