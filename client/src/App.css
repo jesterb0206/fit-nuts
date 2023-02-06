@@ -275,6 +275,10 @@ select:-webkit-autofill:focus {
   align-items: center;
   display: flex;
   flex-direction: column;
+  background-image: url('../src/images/gym.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Workout Summary Card Styling */
