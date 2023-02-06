@@ -1,13 +1,17 @@
 import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '.././components/Card';
 import { useQuery } from '@apollo/client';
 import { QUERY_WORKOUTS } from '../utils/queries';
 
 
 const WorkoutSummary = () => {
-  const { data } = useQuery(QUERY_WORKOUTS);
+  const { data, refetch } = useQuery(QUERY_WORKOUTS);
   const workouts = data?.workouts || [];
 
+  useEffect(() => {
+    refetch();
+  }, []);
 
   console.log(workouts, "this log is on WorkoutSummary.js")
 
