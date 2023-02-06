@@ -139,10 +139,10 @@ select:-webkit-autofill:focus {
 /* Background Image & Flex Layout */
 
 .homepageSection {
-  background-image: url('../src/images/workout-1.jpg');
+  /* background-image: url('../src/images/workout-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -152,8 +152,8 @@ select:-webkit-autofill:focus {
 /* Welcome to Fit NUTS Header */
 
 .welcomeHeader {
-  border-bottom: 10px solid var(--orange);
-  color: var(--black);
+  border-bottom: 10px solid var(--purple);
+  color: var(--orange);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -167,7 +167,7 @@ select:-webkit-autofill:focus {
 
 .introParagraph {
   border: 10px;
-  box-shadow: 2px 0px 5px #999;
+  /* box-shadow: 2px 0px 5px #999; */
   color: var(--black);
   display: flex;
   flex-direction: row;
@@ -178,6 +178,8 @@ select:-webkit-autofill:focus {
   min-height: 100vh;
   padding: 20px;
   text-align: center;
+  color: var(--orange);
+  /* background-color: #412454; */
 }
 
 /* -------------------- Create Workout Section -------------------- */
@@ -414,13 +416,14 @@ table {
 
 .aboutHeader {
   align-items: center;
-  color: #fff;
+  color: var(--orange);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  text-shadow: 0 0 7px blue, 0 0 10px #fff, 0 0 21px blue, 0 0 42px blue,
-    0 0 82px blue, 0 0 92px blue, 0 0 102px blue, 0 0 150px blue;
+  text-shadow: 0 0 7px var(--purple), 0 0 10px var(--purple), 0 0 21px var(--purple), 0 0 42px var(--purple),
+    0 0 82px var(--purple), 0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 150px var(--purple);
 }
 
 /* About Us Blurb */
@@ -454,27 +457,39 @@ table {
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 
 .dev1Picture {
   height: 250px;
+  margin: 10px;
 }
 
 .dev2Picture {
   height: 250px;
+  margin: 10px;
 }
 
 .dev3Picture {
   height: 250px;
+  margin: 10px;
 }
 
 .dev4Picture {
   height: 250px;
+  margin: 10px;
 }
 
 #githubLinks {
-  background-color: #129ce7;
+  background-color: var(--purple);
   border-radius: 5px;
   padding: 10px;
   margin: 15px;
+  color: var(--orange);
 }
+
+/* test comments for push  */
