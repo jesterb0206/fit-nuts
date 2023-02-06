@@ -420,6 +420,7 @@ table {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   text-shadow: 0 0 7px var(--purple), 0 0 10px var(--purple), 0 0 21px var(--purple), 0 0 42px var(--purple),
     0 0 82px var(--purple), 0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 150px var(--purple);
@@ -456,27 +457,39 @@ table {
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 
 .dev1Picture {
   height: 250px;
+  margin: 10px;
 }
 
 .dev2Picture {
   height: 250px;
+  margin: 10px;
 }
 
 .dev3Picture {
   height: 250px;
+  margin: 10px;
 }
 
 .dev4Picture {
   height: 250px;
+  margin: 10px;
 }
 
 #githubLinks {
-  background-color: #129ce7;
+  background-color: var(--purple);
   border-radius: 5px;
   padding: 10px;
   margin: 15px;
+  color: var(--orange);
 }
+
+/* test comments for push  */
