@@ -1,17 +1,20 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
 import '../App.css';
-import {useQuery} from '@apollo/client';
-import {QUERY_WORKOUT} from '../utils/queries'
 
 
+const Card = ({ workouts }) => {
 
-const Card = ({dayOfTheWeek}) => {
-  
-  const {loading, data} = useQuery( QUERY_WORKOUT, {
-    variables: {dayOfTheWeek},
-  });
-  const workouts = data?.workout || [];
+  if (!workouts.length) {
+    return <h3>No Workouts Yet</h3>;
+  }
+
+  const groupedWorkouts = workouts.reduce((acc, workout) => {
+    if (!acc[workout.dayOfTheWeek]) {
+      acc[workout.dayOfTheWeek] = [];
+    }
+    acc[workout.dayOfTheWeek].push(workout);
+    return acc;
+  }, {});
 
   return (
     <div>
