@@ -5,9 +5,11 @@ import { UPDATE_REPS } from '../utils/mutations';
 
 
 
-const RepButtons = ( { _id, reps } ) => {
+const RepButtons = ( { _id, reps, onButtonClick } ) => {
 
-    const [updateReps] = useMutation(UPDATE_REPS);
+    const [updateReps] = useMutation(UPDATE_REPS, {
+        onCompleted: onButtonClick
+    });
    
     return (
 

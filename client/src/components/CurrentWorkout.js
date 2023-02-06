@@ -12,19 +12,28 @@ import RepButtons from './RepButtons';
 
 const CurrentWorkout = ({dayOfTheWeek}) => {
 
-
-  const {loading, data} = useQuery(QUERY_WORKOUT, {
+  const {loading, data, refetch} = useQuery(QUERY_WORKOUT, {
     variables: { dayOfTheWeek },
   });
   
-  // const {loading, error} = useMutation(REMOVE_WORKOUT)
+
+  function handleSetButtonClick() {
+    refetch();
+  }
+
+  function handleRepButtonClick() {
+    refetch();
+  }
+
+  function handleDeleteButtonClick() {
+    refetch();
+  }
 
   const userData = data?.me || {};
 
   if (loading) {
     return <h2>LOADING...</h2>;
   }
-
 
   return (
     <>
@@ -39,9 +48,9 @@ const CurrentWorkout = ({dayOfTheWeek}) => {
                   <Card.Text>{exercise.sets}</Card.Text>
                   <Card.Text>{exercise.reps}</Card.Text>
                   <Card.Text>{exercise.other}</Card.Text>
-                  < SetButtons _id = { exercise._id } sets = { exercise.sets }/>
-                  < RepButtons _id =  {exercise._id} reps = {exercise.reps} />
-                  <DeleteButton _id= { exercise._id } />
+                  < SetButtons _id = { exercise._id } sets = { exercise.sets } onButtonClick={ handleSetButtonClick }/>
+                  < RepButtons _id =  {exercise._id} reps = {exercise.reps}  onButtonClick={ handleRepButtonClick } />
+                  <DeleteButton _id= { exercise._id } onButtonClick = { handleDeleteButtonClick }/>
                 </Card.Body>
               </Card>
             );

@@ -3,13 +3,11 @@ import { Button} from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { DELETE_WORKOUT } from '../utils/mutations'
 
+const DeleteButton = ({_id, onButtonClick}) => {
 
-
-
-
-const DeleteButton = ({_id}) => {
-
-  const [deleteWorkout] = useMutation(DELETE_WORKOUT)
+  const [deleteWorkout] = useMutation(DELETE_WORKOUT, {
+    onCompleted: onButtonClick
+  })
 
     return (
         <div>

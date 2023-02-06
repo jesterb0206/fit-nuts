@@ -15,6 +15,7 @@ const AddExercise = () => {
     reps: '0',
     other: '',
   });
+  
   const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
 
   const [addExercise] = useMutation(ADD_EXERCISE);

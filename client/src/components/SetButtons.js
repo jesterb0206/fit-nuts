@@ -5,12 +5,11 @@ import { UPDATE_SET } from '../utils/mutations';
 
 
 
-const SetButtons = ( { _id, sets } ) => {
+const SetButtons = ( { _id, sets, onButtonClick } ) => {
 
-    const [updateSets] = useMutation(UPDATE_SET);
-
-
-
+    const [updateSets] = useMutation(UPDATE_SET, {
+        onCompleted: onButtonClick
+    });
 
     return (
 
@@ -28,8 +27,6 @@ const SetButtons = ( { _id, sets } ) => {
                 >
                     Increase Set
             </Button>
-        
-        
             <Button
                 className='btn-block btn-danger'
                 onClick={() => {
@@ -46,8 +43,6 @@ const SetButtons = ( { _id, sets } ) => {
                     Decrease Set
             </Button>
         </div>
-
-
 
     )
 }
