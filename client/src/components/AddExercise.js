@@ -1,23 +1,27 @@
-/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
-import {Form, Button, Alert} from 'react-bootstrap';
-import {useMutation} from '@apollo/client';
+import {Form, Button} from 'react-bootstrap';
+import {useMutation, useQuery} from '@apollo/client';
 import {ADD_EXERCISE} from '../utils/mutations';
-import Auth from '../utils/auth';
+import {QUERY_WORKOUT} from '../utils/queries';
 import CurrentWorkout from './CurrentWorkout';
+import Auth from '../utils/auth';
 
 const AddExercise = () => {
   const [userFormData, setUserFormData] = useState({
     dayOfTheWeek: '',
     exerciseName: '',
     weight: '',
-    sets: '',
-    reps: '',
+    sets: '0',
+    reps: '0',
     other: '',
   });
-  const [selectedDayOfTheWeek, setSelectedDayOfTheWeek] = useState(null);
 
   const [addExercise] = useMutation(ADD_EXERCISE);
+  
+  const {loading, data, refetch} = useQuery(QUERY_WORKOUT, {
+    variables: { dayOfTheWeek : userFormData.dayOfTheWeek },
+  });
+
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
@@ -51,7 +55,6 @@ const AddExercise = () => {
     }
 
     try {
-      console.log(userFormData);
 
       const {data} = await addExercise({
         variables: {
@@ -62,22 +65,20 @@ const AddExercise = () => {
         },
       });
 
-      console.log(data);
-      console.log(userFormData);
     } catch (err) {
       console.error(err);
     }
 
     setUserFormData({
+      dayOfTheWeek: userFormData.dayOfTheWeek,
       exerciseName: '',
       weight: '',
-      sets: '',
-      reps: '',
+      sets: '0',
+      reps: '0',
       other: '',
     });
+    refetch();
   };
-
-  // Returns the Create Your Workout Session Form
 
   return (
     <>
@@ -85,85 +86,12 @@ const AddExercise = () => {
         className='currentWorkout'
         dayOfTheWeek={userFormData.dayOfTheWeek}
         setUserFormData={setUserFormData}
+        refetch = {refetch}
+        loading = {loading}
+        data = {data}
       />
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
-        <Form.Group>
-          <Form.Label className='inputNameTitle' htmlFor='name'>
-            Name
-          </Form.Label>
-          <Form.Control
-            type='text'
-            placeholder='Exercise Name'
-            name='exerciseName'
-            onChange={handleInputChange}
-            value={userFormData.exerciseName}
-            required
-          />
-          <Form.Control.Feedback type='invalid'>
-            An exercise's name is required!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label className='inputNameTitle' htmlFor='weight'>
-            Weight
-          </Form.Label>
-          <Form.Control
-            type='text'
-            placeholder='Weight'
-            name='weight'
-            onChange={handleInputChange}
-            value={userFormData.weight}
-            required
-          />
-          <Form.Control.Feedback type='invalid'>
-            Weight is a required field!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label className='inputNameTitle' htmlFor='sets'>
-            Sets
-          </Form.Label>
-          <Form.Control
-            type='number'
-            placeholder='Number of Sets'
-            name='sets'
-            onChange={handleInputChange}
-            value={userFormData.sets}
-          />
-          <Form.Control.Feedback type='invalid'>
-            A valid number of sets is required!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label className='inputNameTitle' htmlFor='reps'>
-            Reps
-          </Form.Label>
-          <Form.Control
-            type='number'
-            placeholder='Number of Reps'
-            name='reps'
-            onChange={handleInputChange}
-            value={userFormData.reps}
-          />
-          <Form.Control.Feedback type='invalid'>
-            A valid number of reps is required!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group>
-          <Form.Label className='inputNameTitle' htmlFor='other'>
-            Other
-          </Form.Label>
-          <Form.Control
-            type='string'
-            placeholder='Other'
-            name='other'
-            onChange={handleInputChange}
-            value={userFormData.other}
-          />
-          <Form.Control.Feedback type='invalid'>
-            Invalid response!
-          </Form.Control.Feedback>
-        </Form.Group>
+
         <Form.Group controlId='formBasicSelect'>
           <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
           <Form.Control
@@ -183,6 +111,89 @@ const AddExercise = () => {
             <option value='Saturday'>Saturday</option>
           </Form.Control>
         </Form.Group>
+
+        <Form.Group>
+          <Form.Label className='inputNameTitle' htmlFor='name'>
+            Name - required
+          </Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Exercise Name'
+            name='exerciseName'
+            onChange={handleInputChange}
+            value={userFormData.exerciseName}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>
+            An exercise's name is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label className='inputNameTitle' htmlFor='weight'>
+            Weight
+          </Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Weight'
+            name='weight'
+            onChange={handleInputChange}
+            value={userFormData.weight}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>
+            Weight is a required field!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label className='inputNameTitle' htmlFor='sets'>
+            Sets
+          </Form.Label>
+          <Form.Control
+            type='number'
+            placeholder='Number of Sets'
+            name='sets'
+            onChange={handleInputChange}
+            value={userFormData.sets}
+          />
+          <Form.Control.Feedback type='invalid'>
+            A valid number of sets is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label className='inputNameTitle' htmlFor='reps'>
+            Reps
+          </Form.Label>
+          <Form.Control
+            type='number'
+            placeholder='Number of Reps'
+            name='reps'
+            onChange={handleInputChange}
+            value={userFormData.reps}
+          />
+          <Form.Control.Feedback type='invalid'>
+            A valid number of reps is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label className='inputNameTitle' htmlFor='other'>
+            Other
+          </Form.Label>
+          <Form.Control
+            type='string'
+            placeholder='Other'
+            name='other'
+            onChange={handleInputChange}
+            value={userFormData.other}
+          />
+          <Form.Control.Feedback type='invalid'>
+            Invalid response!
+          </Form.Control.Feedback>
+        </Form.Group>
+
         <Button
           disabled={!(userFormData.exerciseName && userFormData.weight)}
           type='primary'
@@ -190,11 +201,13 @@ const AddExercise = () => {
           Submit
         </Button>
       </Form>
+
       {errorMessage && (
         <div>
           <p className='error-text'>{errorMessage}</p>
         </div>
       )}
+      
     </>
   );
 };
