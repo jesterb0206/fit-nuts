@@ -31,8 +31,8 @@ const CurrentWorkout = ({data, loading, refetch}) => {
     <>
       {data?.workout?.map((exercise) => {
         return (
-          <div className='example' id='cardModified'>
-            <table className='styledTableModified'>
+          <div className='card example'>
+            <table className='styled-table'>
               <thead>
                 <tr>
                   <th>Workout</th>
@@ -50,7 +50,7 @@ const CurrentWorkout = ({data, loading, refetch}) => {
                 </tr>
               </tbody>
             </table>
-            <div id='centerButtonTwo'>
+            <div id='centerButton'>
               <SetButtons
                 _id={exercise._id}
                 sets={exercise.sets}

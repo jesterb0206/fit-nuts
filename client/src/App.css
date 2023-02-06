@@ -194,16 +194,9 @@ select:-webkit-autofill:focus {
 /* Create Your Workout Session Container */
 
 .workoutSection {
-  background-image: url('../src/images/gym.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
+  margin: auto;
+  max-width: 768px;
+  width: 80%;
 }
 
 /* Create Your Workout Session Header */
@@ -212,12 +205,11 @@ select:-webkit-autofill:focus {
   background-color: var(--orange);
   border-radius: 20px;
   color: var(--white);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 15px;
-  padding: 10px;
+  font-size: 40px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  padding-bottom: 12px;
+  padding-top: 12px;
   text-align: center;
 }
 
@@ -287,7 +279,7 @@ select:-webkit-autofill:focus {
   left: 50%;
   margin-bottom: 30px;
   max-width: 1000px;
-  overflow-x: scroll;
+  overflow-x: display;
   overflow-y: display;
   padding: 10px;
   position: relative;
@@ -300,11 +292,8 @@ select:-webkit-autofill:focus {
 /* Now the Tables Won't Word Wrap On Horizontal Overflow & Are Centered */
 
 .styledTableModified {
-  left: 50%;
   margin-bottom: 20px;
   margin-top: 20px;
-  position: relative;
-  transform: translateX(-50%);
   white-space: nowrap;
 }
 
@@ -320,7 +309,6 @@ select:-webkit-autofill:focus {
 
 .styledTableModified th,
 .styledTableModified td {
-  border-collapse: collapse;
   padding: 20px 20px;
 }
 
@@ -343,6 +331,12 @@ select:-webkit-autofill:focus {
 
 /* -------------------- Workout Card Section -------------------- */
 
+.workout__summary {
+  margin: auto;
+  max-width: 768px;
+  width: 80%;
+}
+
 /* An ID to Center Only Specific Elements */
 
 #center__text {
@@ -360,20 +354,28 @@ select:-webkit-autofill:focus {
 
 /* Workout Summary Card Styling */
 
+#testing {
+  margin: auto;
+  max-width: 768px;
+  width: 100%;
+}
+
 .card {
   background-color: var(--off-white);
-  border: 1px solid var(--purple);
   border-radius: 20px;
   box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
   cursor: pointer;
   height: 600px;
+  left: 50%;
   margin-bottom: 30px;
   max-width: 1000px;
   /* Makes the Workout Summary Cards Horizontally / Vertically Scrollable if There's Overflow */
   overflow-x: scroll;
   overflow-y: display;
   padding: 10px;
-  width: 90%;
+  position: relative;
+  transform: translateX(-50%);
+  width: 80%;
 }
 
 /* Useful For Overflow Issues */
@@ -400,15 +402,19 @@ table {
 }
 
 .styled-table {
-  border-collapse: collapse;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.styled-table {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   font-size: 16px;
 }
 
 .styled-table thead tr {
-  background-color: var(--orange);
+  background-color: var(--purple);
   color: var(--white);
-  text-align: left;
 }
 
 .styled-table th,
@@ -416,12 +422,9 @@ table {
   padding: 20px 20px;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: var(--white);
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid var(--purple);
+.styled-table tbody tr {
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 .styled-table tbody tr.active-row {
@@ -431,9 +434,7 @@ table {
 /* An ID For Centering Buttons */
 
 #centerButton {
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  margin: auto;
 }
 
 /* Workout Button Styling */
