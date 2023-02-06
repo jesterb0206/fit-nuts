@@ -240,10 +240,14 @@ select:-webkit-autofill:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  left: 50%;
   margin-bottom: 30px;
   margin-top: 20px;
   max-width: 1000px;
   padding: 10px;
+  position: relative;
+  transform: translateX(-50%);
+  width: 80%;
 }
 
 /* Input Title Styling */
@@ -267,6 +271,74 @@ select:-webkit-autofill:focus {
   margin: 15px;
   padding: 10px;
   text-align: center;
+}
+
+/* -------------------- Create Your Workout Session Card Styling -------------------- */
+
+/* Create Your Workout Session Card Styling */
+
+#cardModified {
+  background-color: var(--off-white);
+  border-radius: 20px;
+  border: none;
+  box-shadow: 12px 12px 2px 1px rgba(248, 150, 46, 0.75);
+  color: var(--black);
+  height: 600px;
+  left: 50%;
+  margin-bottom: 30px;
+  max-width: 1000px;
+  overflow-x: scroll;
+  overflow-y: display;
+  padding: 10px;
+  position: relative;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+/* Table Styling */
+
+/* Now the Tables Won't Word Wrap On Horizontal Overflow & Are Centered */
+
+.styledTableModified {
+  left: 50%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.styledTableModified {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+.styledTableModified thead tr {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.styledTableModified th,
+.styledTableModified td {
+  border-collapse: collapse;
+  padding: 20px 20px;
+}
+
+.styledTableModified tbody tr {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.styledTableModified tbody tr.active-row {
+  font-weight: bold;
+}
+
+/* An ID For Centering Buttons */
+
+#centerButtonTwo {
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
 }
 
 /* -------------------- Workout Card Section -------------------- */

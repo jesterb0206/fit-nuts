@@ -15,7 +15,7 @@ const RepButtons = ( { _id, reps, onButtonClick } ) => {
 
         <div>
             <Button
-                className='btn-block btn-danger'
+                className='btn-primary'
                 onClick={() => {
                     updateReps({ 
                         variables: { 
@@ -30,7 +30,7 @@ const RepButtons = ( { _id, reps, onButtonClick } ) => {
         
         
             <Button
-                className='btn-block btn-danger'
+                className='btn-primary'
                 onClick={() => {
                     if ( (reps - 1) >= 0 ) {
                         updateReps(
