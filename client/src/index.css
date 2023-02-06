@@ -14,4 +14,8 @@ body {
     sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-image: url('../src/images/gym.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
