@@ -3,8 +3,8 @@ import {Button} from 'react-bootstrap';
 import {useMutation} from '@apollo/client';
 import {UPDATE_SET} from '../utils/mutations';
 
-const SetButtons = ({_id, sets, onButtonClick}) => {
-  const [updateSets] = useMutation(UPDATE_SET, {
+const SetButtons = ( { _id, sets, onButtonClick } ) => {
+  const [updateSets] = useMutation( UPDATE_SET, {
     onCompleted: onButtonClick,
   });
 

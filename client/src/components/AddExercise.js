@@ -7,6 +7,8 @@ import CurrentWorkout from './CurrentWorkout';
 import Auth from '../utils/auth';
 
 const AddExercise = () => {
+
+  /* default values for user form data */
   const [userFormData, setUserFormData] = useState({
     dayOfTheWeek: '',
     exerciseName: '',
@@ -18,10 +20,14 @@ const AddExercise = () => {
 
   const [addExercise] = useMutation(ADD_EXERCISE);
   
+  /* This query is used to bring up all of the workouts associated with a particular day of the week that is selected.
+  This refetch method is also passed along to child component CurrentWorkout so that the page re renders with dynamically
+  with changes to the database */
   const {loading, data, refetch} = useQuery(QUERY_WORKOUT, {
     variables: { dayOfTheWeek : userFormData.dayOfTheWeek },
   });
 
+  /* This use state is used for communicating errors to the user associated with the form inputs */
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
@@ -32,10 +38,14 @@ const AddExercise = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    if (userFormData.dayOfTheWeek === '') {
-      setErrorMessage('Please select a valid day of the week :) ');
+    if ( (userFormData.sets) < 0 ) {
+      setErrorMessage('Both sets and reps field cannot be negative values :) ')
+      return
+    }
 
-      return;
+    if ( (userFormData.reps) < 0 ) {
+      setErrorMessage('Both sets and reps field cannot be negative values :) ')
+      return
     }
 
     setErrorMessage('');
@@ -82,18 +92,11 @@ const AddExercise = () => {
 
   return (
     <>
-      <CurrentWorkout
-        className='currentWorkout'
-        dayOfTheWeek={userFormData.dayOfTheWeek}
-        setUserFormData={setUserFormData}
-        refetch = {refetch}
-        loading = {loading}
-        data = {data}
-      />
+     
       <Form className='addExerciseForm' onSubmit={handleFormSubmit}>
 
         <Form.Group controlId='formBasicSelect'>
-          <Form.Label className='inputNameTitle'>Day of the Week</Form.Label>
+          <Form.Label className='inputNameTitle'>Day of the Week - required</Form.Label>
           <Form.Control
             as='select'
             placeholder='Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday '
@@ -131,7 +134,7 @@ const AddExercise = () => {
 
         <Form.Group>
           <Form.Label className='inputNameTitle' htmlFor='weight'>
-            Weight
+            Weight - required
           </Form.Label>
           <Form.Control
             type='text'
@@ -195,7 +198,7 @@ const AddExercise = () => {
         </Form.Group>
 
         <Button
-          disabled={!(userFormData.exerciseName && userFormData.weight)}
+          disabled={!(userFormData.exerciseName && userFormData.weight && userFormData.dayOfTheWeek)}
           type='primary'
         >
           Submit
@@ -208,6 +211,14 @@ const AddExercise = () => {
         </div>
       )}
       
+      <CurrentWorkout
+        className='currentWorkout'
+        dayOfTheWeek={userFormData.dayOfTheWeek}
+        setUserFormData={setUserFormData}
+        refetch = {refetch}
+        loading = {loading}
+        data = {data}
+      />
     </>
   );
 };

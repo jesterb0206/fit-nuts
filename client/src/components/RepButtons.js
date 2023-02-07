@@ -3,8 +3,6 @@ import { Button} from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { UPDATE_REPS } from '../utils/mutations';
 
-
-
 const RepButtons = ( { _id, reps, onButtonClick } ) => {
 
     const [updateReps] = useMutation(UPDATE_REPS, {
@@ -45,9 +43,7 @@ const RepButtons = ( { _id, reps, onButtonClick } ) => {
                     Decrease Rep
             </Button>
         </div>
-
-
-
+        
     )
 }
 
