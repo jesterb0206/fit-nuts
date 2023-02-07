@@ -5,7 +5,7 @@ const Card = ({ workouts }) => {
   if (!workouts.length) {
     return <h3>No Workouts Yet</h3>;
   }
-
+  
   const groupedWorkouts = workouts.reduce((acc, workout) => {
     if (!acc[workout.dayOfTheWeek]) {
       acc[workout.dayOfTheWeek] = [];
@@ -15,11 +15,11 @@ const Card = ({ workouts }) => {
   }, {});
 
   // Returns Workout Summary Card Content
-
+  
   return (
     <div id='testing'>
       {Object.entries(groupedWorkouts).map(([day, workoutsForDay]) => (
-        <div className='card example' key={day}>
+        <div className='card example'>
           <h1 id='center__text'>{day}</h1>
           <table className='styled-table'>
             <thead>

@@ -2,12 +2,12 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+  query me($dayOfTheWeek: String!) {
+    me(dayOfTheWeek: $dayOfTheWeek) {
       _id
       username
       email
-      workout {
+      workouts {
         _id
         dayOfTheWeek
         exerciseName
@@ -19,10 +19,13 @@ export const QUERY_ME = gql`
     }
   }
 `
-
-export const QUERY_WORKOUT = gql`
-  query workout($dayOfTheWeek: String!) {
-    workout(dayOfTheWeek: $dayOfTheWeek) {
+export const QUERY_WORKOUTS = gql`
+query workouts {
+  workouts {
+    _id
+    username
+    email
+    workouts {
       _id
       dayOfTheWeek
       exerciseName
@@ -32,16 +35,5 @@ export const QUERY_WORKOUT = gql`
       other
     }
   }
-`
-export const QUERY_WORKOUTS = gql`
-  query allWorkouts {
-    workouts {
-      dayOfTheWeek
-      exerciseName
-      weight
-      sets
-      reps
-      other
-    }
-  }
+}
 `

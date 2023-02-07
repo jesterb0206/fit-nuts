@@ -22,7 +22,7 @@ const CurrentWorkout = ({data, loading, refetch}) => {
 
   return (
     <>
-      {data?.workout?.map((exercise) => {
+      {data?.me.workouts?.map((exercise) => {
         return (
           <div className='card example' key={exercise._id}>
             <table className='styled-table'>

@@ -6,7 +6,7 @@ const typeDefs = gql`
         _id: ID!
         username: String
         email: String
-        workout: [Workout]
+        workouts: [Workout]
     }
     type Workout {
         _id: ID!
@@ -30,10 +30,10 @@ const typeDefs = gql`
         other: String
     }
     type Query {
-        me: User
+        me( dayOfTheWeek: String! ): User
         users: [User]
         workout( dayOfTheWeek: String! ): [Workout]
-        workouts: [Workout]!
+        workouts: User
     }
     type Mutation {
         login(email: String!, password: String!): Auth

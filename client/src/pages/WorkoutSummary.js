@@ -5,7 +5,8 @@ import React, {useEffect} from 'react';
 
 const WorkoutSummary = () => {
   const {data, refetch} = useQuery(QUERY_WORKOUTS);
-  const workouts = data?.workouts || [];
+  
+  const workouts = data?.workouts.workouts || [];
 
   useEffect(() => {
     refetch();
