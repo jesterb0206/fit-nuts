@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {useMutation, useQuery} from '@apollo/client';
 import {ADD_EXERCISE} from '../utils/mutations';
-import {QUERY_WORKOUT} from '../utils/queries';
 import CurrentWorkout from './CurrentWorkout';
 import Auth from '../utils/auth';
+import { QUERY_ME } from '../utils/queries';
 
 const AddExercise = () => {
 
@@ -23,9 +23,14 @@ const AddExercise = () => {
   /* This query is used to bring up all of the workouts associated with a particular day of the week that is selected.
   This refetch method is also passed along to child component CurrentWorkout so that the page re renders with dynamically
   with changes to the database */
-  const {loading, data, refetch} = useQuery(QUERY_WORKOUT, {
+
+  const { loading, data, refetch} = useQuery(QUERY_ME, {
     variables: { dayOfTheWeek : userFormData.dayOfTheWeek },
-  });
+  })
+
+  useEffect(() => {
+    refetch();
+  }, [userFormData]);
 
   /* This use state is used for communicating errors to the user associated with the form inputs */
   const [errorMessage, setErrorMessage] = useState('');
@@ -35,6 +40,7 @@ const AddExercise = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+  console.log(userFormData.dayOfTheWeek);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 

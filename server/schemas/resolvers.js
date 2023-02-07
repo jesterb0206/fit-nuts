@@ -5,14 +5,16 @@ const { signToken } = require('../utils/auth')
 const resolvers = {
 
     Query: {
-        workout: async(parent, {dayOfTheWeek}, context ) => {
+        me: async(parent, { dayOfTheWeek }, context ) => {
             if( context.user ) {
-                return await Workout.find({ dayOfTheWeek: dayOfTheWeek}).select('-__v -password')
+                return await User.findOne({ _id: context.user._id}).select('-__v -password').populate({path: 'workouts', match: {dayOfTheWeek: dayOfTheWeek }
+            });
             }
-            throw new AuthenticationError('You need to be logged in!');
         },
-        workouts: async () => {
-            return Workout.find();
+        workouts: async ( parent, arg, context) => {
+            if( context.user) {
+                return await User.findOne({ _id: context.user._id}).select('-__v -password').populate('workouts');
+            }
         },
     },
 
