@@ -6,7 +6,7 @@ import {React} from 'react';
 import Eddie from '../images/eddie.png';
 import samAvatar from '../images/southParkAvatar.png';
 import Pat from '../images/pat.png';
-import Thair from '../images/thair.png';
+import Thair from '../images/Thair.png';
 import Bradley from '../images/bradley.png';
 
 const AboutUs = () => {
