@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const Card = ({workouts}) => {
+const Card = ({ workouts }) => {
   if (!workouts.length) {
     return <h3>No Workouts Yet</h3>;
   }
@@ -21,7 +21,6 @@ const Card = ({workouts}) => {
       {Object.entries(groupedWorkouts).map(([day, workoutsForDay]) => (
         <div className='card example' key={day}>
           <h1 id='center__text'>{day}</h1>
-          {/* Workout Summary Table */}
           <table className='styled-table'>
             <thead>
               <tr>
