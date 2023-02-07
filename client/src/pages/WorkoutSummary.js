@@ -11,8 +11,6 @@ const WorkoutSummary = () => {
     refetch();
   }, []);
 
-  console.log(workouts, 'this log is on WorkoutSummary.js');
-
   return (
     <div className='workout__summary'>
       <h1 className='workoutHeader' id='center__text2'>
