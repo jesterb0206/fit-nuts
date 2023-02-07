@@ -576,8 +576,8 @@ table {
 /* Portrait Styling */
 
 .devPicture {
-  height: 250px;
   margin-top: 12px;
+  width: 90%;
 }
 
 .devPicture:hover {
