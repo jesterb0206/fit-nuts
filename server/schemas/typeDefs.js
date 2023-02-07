@@ -8,7 +8,6 @@ const typeDefs = gql`
         email: String
         workout: [Workout]
     }
-
     type Workout {
         _id: ID!
         dayOfTheWeek: String!
@@ -18,12 +17,10 @@ const typeDefs = gql`
         reps: Int
         other: String
     }
-
     type Auth {
         token: ID!
         user: User
       }
-
     input MessageInput {
         exerciseName: String!
         workoutId: ID!
@@ -32,14 +29,12 @@ const typeDefs = gql`
         reps: Int
         other: String
     }
-
     type Query {
         me: User
         users: [User]
         workout( dayOfTheWeek: String! ): [Workout]
         workouts: [Workout]!
     }
-
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
@@ -48,7 +43,6 @@ const typeDefs = gql`
         updateSets(_id: ID!, sets: Int): Workout
         updateReps( _id: ID!, reps: Int) : Workout
         summaryPage(summary: MessageInput ): User
-        updateWorkoutDay(dayOfTheWeek: String, exerciseName: String!, weight: Int!, sets: Int, reps: Int, other: String) : Workout
     }
 `
 

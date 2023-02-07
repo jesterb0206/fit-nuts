@@ -1,11 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, {useState} from 'react';
-import {Jumbotron, Container, CardColumns, Card, Button} from 'react-bootstrap';
-
-import {QUERY_ME} from '../utils/queries';
-import {QUERY_WORKOUT} from '../utils/queries';
-import {useMutation, useQuery} from '@apollo/client';
-import Auth from '../utils/auth';
+import React from 'react';
 import DeleteButton from './DeleteButton';
 import SetButtons from './SetButtons';
 import RepButtons from './RepButtons';
@@ -31,7 +24,7 @@ const CurrentWorkout = ({data, loading, refetch}) => {
     <>
       {data?.workout?.map((exercise) => {
         return (
-          <div className='card example'>
+          <div className='card example' key={exercise._id}>
             <table className='styled-table'>
               <thead>
                 <tr>
