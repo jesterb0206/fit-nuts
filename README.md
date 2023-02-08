@@ -1,4 +1,4 @@
-# Fit NUTS 🏋️‍♀️🥜🏋️‍♂️
+# Fit NUTS 🥜
 
 <br>
 
@@ -55,7 +55,7 @@
 
 <br>
 
-- [Fit NUTS 🏋️‍♀️🥜🏋️‍♂️](#fit-nuts-️️️️)
+- [Fit NUTS 🥜](#fit-nuts-)
   - [License](#license)
   - [Contributors](#contributors)
   - [Deployment Link](#deployment-link)
@@ -73,7 +73,7 @@
 
 <br>
 
-**Fit NUTS 🏋️‍♀️🥜🏋️‍♂️** is a single-page application, built using the MERN stack, that is also a progressive web application. In addition, it features the Mongoose ODM, uses GraphQL queries and mutations for retrieving, adding, updating, and deleting data, includes JSON Web Tokens for authentication and protects sensitive API key information on the server. Users can sign up to create, modify and delete their workout routines for particular days of the week. Also, they can install **Fit NUTS 🏋️‍♀️🥜🏋️‍♂️** for offline use by navigating to the URL search bar (there will be an option to install **Fit NUTS 🏋️‍♀️🥜🏋️‍♂️** to your computer).
+**Fit NUTS 🥜** is a single-page application, built using the MERN stack, that is also a progressive web application. In addition, it features the Mongoose ODM, uses GraphQL queries and mutations for retrieving, adding, updating, and deleting data, includes JSON Web Tokens for authentication and protects sensitive API key information on the server. Users can sign up to create, modify and delete their workout routines for particular days of the week. Also, they can install **Fit NUTS 🥜** for offline use by navigating to the URL search bar (there will be an option to install **Fit NUTS 🥜** to your computer).
 
 <br>
 
@@ -81,7 +81,7 @@
 
 <br>
 
-Clone the repository to your local machine, open your terminal, and navigate to the root folder of the **Fit Nuts** repository. To install the necessary dependencies, run `npm i` in your command-line terminal. Repeat this process two more times, first navigating to the server folder and second navigating to the client folder (running `npm i` both times).
+Clone the repository to your local machine, open your terminal, and navigate to the root folder of the **Fit Nuts 🥜** repository. To install the necessary dependencies, run `npm i` in your command-line terminal. Repeat this process two more times, first navigating to the server folder and second navigating to the client folder (running `npm i` both times).
 
 <br>
 
@@ -89,7 +89,7 @@ Clone the repository to your local machine, open your terminal, and navigate to 
 
 <br>
 
-1. To begin using **Fit NUTS 🏋️‍♀️🥜🏋️‍♂️**, sign up by entering a username, a valid email address and a secure password.
+1. To begin using **Fit NUTS 🥜**, sign up by entering a username, a valid email address and a secure password.
 
 <br>
 
@@ -97,7 +97,7 @@ Clone the repository to your local machine, open your terminal, and navigate to 
 
 <br>
 
-2. Once you sign up you'll be taken to the homepage. Here you can learn more about **Fit NUTS 🏋️‍♀️🥜🏋️‍♂️**!
+2. Once you sign up you'll be taken to the homepage. Here you can learn more about **Fit NUTS 🥜**!
 
 <br>
 
@@ -127,7 +127,7 @@ Clone the repository to your local machine, open your terminal, and navigate to 
 
 <br>
 
-6. Finally, read more about the developers behind **Fit NUTS 🏋️‍♀️🥜🏋️‍♂️** by navigating to the `Meet the Devs` page! If you click on a developer's image you'll be taken to their portfolio. Likewise, if you click on the button with the developer's name followed by GitHub you'll be taken to that developer's GitHub account.
+6. Finally, read more about the developers behind **Fit NUTS 🥜** by navigating to the `Meet the Devs` page! If you click on a developer's image you'll be taken to their portfolio. Likewise, if you click on the button with the developer's name followed by GitHub you'll be taken to that developer's GitHub account.
 
 <br>
 
